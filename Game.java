@@ -109,6 +109,10 @@ class Game
             printHelp();
         else if (commandWord.equals("go"))
             goRoom(command);
+        else if (commandWord.equals("fly")){
+            System.out.println("You tried to fly and fell to your death")
+            return true;
+        }
         else if (commandWord.equals("quit"))
         {
             if(command.hasSecondWord())

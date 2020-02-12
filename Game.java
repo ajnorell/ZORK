@@ -40,7 +40,7 @@ class Game
      */
     private void createRooms()
     {
-        Room outside, lab, cafeteria, imc, office;
+        Room outside, lab, cafeteria, imc, office, roof;
       
         // create the rooms
         outside = new Room("the main entrance outside at Normal West");
@@ -48,13 +48,15 @@ class Game
         cafeteria = new Room("the cafeteria");
         imc = new Room("the IMC");
         office = new Room("the main office");
+        roof = new Room("the secret");
         
         // initialise room exits
         outside.setExits(null, lab, imc, cafeteria);
         lab.setExits(null, null, null, outside);
         cafeteria.setExits(null, outside, null, null);
         imc.setExits(outside, office, null, null);
-        office.setExits(null, null, null, imc);
+        office.setExits(null, roof, null, imc);
+        roof.setExits(null, null, null, office);
 
         currentRoom = outside;  // start game outside
     }

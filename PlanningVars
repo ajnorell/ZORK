@@ -1,6 +1,13 @@
 Instance Varibles:
 
+String List:Inverntory
+int health
+int strength
+int levellevel
+
+
 Rooms:
+
 1)Escape Pod
 2)Engine Room
 3)Rec Area

@@ -23,7 +23,6 @@
 class Game 
 {
     private Parser parser;
-    private Room currentRoom;
         
 
     /**
@@ -31,7 +30,6 @@ class Game
      */
     public Game() 
     {
-        createRooms();
         parser = new Parser();
     }
 
@@ -82,8 +80,17 @@ class Game
         String commandWord = command.getCommandWord();
         if (commandWord.equals("help"))
             printHelp();
-        else if (commandWord.equals("go"))
-            goRoom(command);
+        else if(commandWord.equals("w"){
+            
+        }
+        else if(commandWord.equals("a"){
+            
+        }
+        else if(commandWord.equals("s"){
+            
+        }
+        else if(commandWord.equals("d"){
+            
         }
         else if (commandWord.equals("quit"))
         {

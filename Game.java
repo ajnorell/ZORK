@@ -114,8 +114,8 @@ class Game
      */
     private void printHelp() 
     {
-        System.out.println("You are lost. You are alone. You wander");
-        System.out.println("around Normal West High School.");
+        System.out.println("");
+        System.out.println("");
         System.out.println();
         System.out.println("Your command words are:");
         parser.showCommands();

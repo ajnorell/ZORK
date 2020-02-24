@@ -92,6 +92,9 @@ class Game
         else if(commandWord.equals("d"){
             
         }
+        else if(commandWord.equals("stats"){
+            
+        }
         else if (commandWord.equals("quit"))
         {
             if(command.hasSecondWord())

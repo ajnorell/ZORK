@@ -115,12 +115,20 @@ public class zorkArray
          else if (map[pY+v][pX+h]==61)
              System.out.println("You recognize Emma as the captain of the ship");
              //start the storyline that includes Emma
-         else if (map[pY+v][pX+h]==62)
-             System.out.println("You see the tangled mass of a broken body beneath the boulders. \n You only know it's Commander Davidson by the broken dog tag hanging from his hand");
+         else if (map[pY+v][pX+h]==62){
+            System.out.println("You see the tangled mass of a broken body beneath the boulders. \n You only know it's Commander Davidson by the broken dog tag hanging from his hand");
              //new objective: find Melissa (63)
+             //those two coordinates might be flipped
+            map[43][37] = 64;
+         }
          else if (map[pY+v][pX+h]==63)
              System.out.println("You see Melissa, the ship's engineer");
-             //if collectedFuses!=totalFuses start the storyline to find the fuses, otherwise find the bomb components
+             if ((collectedFuses != totalFuses) && (storyline(0).equals("Find the Fuses"){
+                System.out.println("You havent found all of the fuses yet! Keep Looking");  
+             }
+             else if (collectedFuses == totalFuses){
+              //diolauge
+             }
          else if (map[pY+v][pX+h]==64)
              System.out.println("A strange man introduces himself as Professor Hidgens.");
              //start storyline with Prof. H

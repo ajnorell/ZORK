@@ -79,7 +79,7 @@ public class zorkArray
      private static int pX = 21;
      private static int pY = 52;
      private static int[] playerOn = {0,0};
-     public static void main(String[] args){
+     /*public static void main(String[] args){
          //w
          move(-1,0);
          //a
@@ -88,8 +88,9 @@ public class zorkArray
          move(1,0);
          //d
          move(0,1);
-     }
+     }*/
      
+    
      public static void move(int v, int h){
          if (map[pY+v][pX+h]==1)
              System.out.println("You have run into a wall");
@@ -114,7 +115,8 @@ public class zorkArray
              System.out.println("A bed blocks your path");
          else if (map[pY+v][pX+h]==61)
              System.out.println("You recognize Emma as the captain of the ship");
-             //start the storyline that includes Emma
+             /*"Needed something to eat? Here's a granola bar." Emma hands you a granola bar which you stash in your inventory. 
+             */
          else if (map[pY+v][pX+h]==62)
              System.out.println("You see the tangled mass of a broken body beneath the boulders. \n You only know it's Commander Davidson by the broken dog tag hanging from his hand");
              //new objective: find Melissa (63)
@@ -123,8 +125,8 @@ public class zorkArray
              //if collectedFuses!=totalFuses start the storyline to find the fuses, otherwise find the bomb components
          else if (map[pY+v][pX+h]==64)
              System.out.println("A strange man introduces himself as Professor Hidgens.");
-             //start storyline with Prof. H
-             //if objective == "find fuses", add a fuse to the inventory
+             //"Good god! You must be Paul. Emma told us to expect you today. 
+             //if objective == "find fuses", add a fuse to the inventory, Hidgens say "Here's a fuse to help you on your question. 
          else{
             if (map[pY+v][pX+h]==4){
                 System.out.println("You enter the threshold to a new room");

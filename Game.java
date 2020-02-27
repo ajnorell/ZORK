@@ -81,17 +81,16 @@ class Game
         if (commandWord.equals("help"))
             printHelp();
         else if(commandWord.equals("w"){
-            py -= 1;
-            if room 
+            move(0, 1);
         }
         else if(commandWord.equals("a"){
-            px -= 1;
+            move(-1, 0);
         }
         else if(commandWord.equals("s"){
-            py += 1;
+            move(1, 0);
         }
         else if(commandWord.equals("d"){
-            px += 1;
+            move(0, -1);
         }
         else if(commandWord.equals("stats"){
             

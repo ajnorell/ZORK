@@ -62,6 +62,13 @@ class Game
         System.out.println("Working Title is the working title for a hype game.");
         System.out.println("Type 'help' if you need help.");
         System.out.println();
+
+        
+        int collectedFuses = 0;
+        int totalFuses = 0;
+
+        ArrayList<String> inventory = ArrayList<String>("Knife");
+
     }
 
     /**

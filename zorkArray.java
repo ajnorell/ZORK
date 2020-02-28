@@ -117,7 +117,9 @@ public class zorkArray
              System.out.println("You recognize Emma as the captain of the ship");
 
              /*"Needed something to eat? Here's a granola bar." Emma hands you a granola bar which you stash in your inventory. 
+               "Paul, right? We heard you were going to be arriving soon. Glad to have you here. You'll be on the communications team, helping out Commander Davidson. You might be able to find him in the comm room."
              */
+         
          else if (map[pY+v][pX+h]==62)
              System.out.println("You see the tangled mass of a broken body beneath the boulders. \n You only know it's Commander Davidson by the broken dog tag hanging from his hand");
 

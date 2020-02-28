@@ -141,12 +141,11 @@ public class zorkArray
              }
          else if (map[pY+v][pX+h]==64)
              System.out.println("A strange man introduces himself as Professor Hidgens.");
-
-             //"Good god! You must be Paul. Emma told us to expect you today. 
-             //if objective == "find fuses", add a fuse to the inventory, Hidgens say "Here's a fuse to help you on your question. 
-
-             //start storyline with Prof. H
-             //if objective == "find fuses", add a fuse to the inventory
+            if storyline(0).equals("Find Fuses"){
+                collectedFuses += 1;
+                System.out.println("Good god! You must be Paul. Emma told us to expect you today.");
+                System.out.println("PSA: Prof
+            }
          else if (map[pY+v][pX+h]==71)
              System.out.println("Unfortunately for you, this door does not exist.");
 

@@ -116,14 +116,27 @@ public class zorkArray
          else if (map[pY+v][pX+h]==61)
              System.out.println("You recognize Emma as the captain of the ship");
 
-             /*"Needed something to eat? Here's a granola bar." Emma hands you a granola bar which you stash in your inventory. 
-               "Paul, right? We heard you were going to be arriving soon. Glad to have you here. You'll be on the communications team, helping out Commander Davidson. You might be able to find him in the comm room."
+             /*"Needed something to eat? Here's a granola bar."
+               Emma hands you a granola bar which you stash in your inventory. 
+               "Paul, right? We heard you were going to be arriving soon. Glad to have you here."
+               You find yourself smiling. Working regularly with Galactic League of Extraterrestrial Exploration had always been your dream job but Emma here made you even more at ease.
+               You start to wonder if you'll see her around the ship when she starts speaking again.
+               "You'll be on the communications team, helping out Commander Davidson. You might be able to find him in the comm room."
+               "Good luck!"
+               variable changes so whenever you interact with her, she says "You might be able to find Commander Davidson in the comm room."
              */
          
          else if (map[pY+v][pX+h]==62)
              System.out.println("You see the tangled mass of a broken body beneath the boulders. \n You only know it's Commander Davidson by the broken dog tag hanging from his hand");
 
-             //start the storyline that includes Emma
+             /*start the storyline that includes Davidson
+               "Commander Davidson??" You ask frantically.
+               What the heck happened? There was that...that crash and now there's a mangled body here and...
+               You try to not panic as you think of what to do.
+               I'll go back to the cafeteria to talk to Emma
+               (can't find Emma, bump into Melissa)
+             */
+         
          else if (map[pY+v][pX+h]==62){
             System.out.println("You see the tangled mass of a broken body beneath the boulders. \n You only know it's Commander Davidson by the broken dog tag hanging from his hand");
 

@@ -23,11 +23,11 @@
 class Game 
 {
     private Parser parser;
-    int collectedFuses = 0;
-    int totalFuses = 0;
-    ArrayList<String> inv = ArrayList<String>();
+    public static int collectedFuses = 0;
+    public static int collectedBombs = 0;
+    private ArrayList<String> inv = ArrayList<String>();
     inv.add("Knife");
-    ArrayList<String> story = ArrayList<String>();
+    public static ArrayList<String> story = ArrayList<String>();
     story.add("Find Emma").add("Go to comms").add("Find Davidson").add("Find Melissa").add("Fuses").add("Fix engine").add("Bombs").add("Build bomb").add("Escape").add("Choose");
         
     private static 
@@ -50,49 +50,50 @@ class Game
         // execute them until the game is over.
                 
         boolean finished = false;
+        boolean storyPrinted = false;
         while (! finished)
         {
             Command command = parser.getCommand();
             finished = processCommand(command);
-            if story.get(0).equals("Find Emma")
+            if story.get(0).equals("Find Emma" && storyPrinted = false)
             {
-                
+                findEmma();
             }
-            else if story.get(0).equals("Go to comms")
+            else if story.get(0).equals("Go to comms" && storyPrinted = false)
             {
-                
+                goToComms();
             }
-            else if story.get(0).equals("Find Davidson")
+            else if story.get(0).equals("Find Davidson" && storyPrinted = false)
             {
-                
+                findDavidson();
             }
-            else if story.get(0).equals("Find Melissa")
+            else if story.get(0).equals("Find Melissa" && storyPrinted = false)
             {
-                
+                findMelissa();
             }
-            else if story.get(0).equals("Fuses")
+            else if story.get(0).equals("Fuses" && storyPrinted = false)
             {
-                
+                fuses();
             }
-            else if story.get(0).equals("Fix Engine")
+            else if story.get(0).equals("Fix Engine" && storyPrinted = false)
             {
-                
+                fixEngine();
             }
-            else if story.get(0).equals("Bombs")
+            else if story.get(0).equals("Bombs" && storyPrinted = false)
             {
-                
+                bombs();
             }
-            else if story.get(0).equals("Build bomb")
+            else if story.get(0).equals("Build bomb" && storyPrinted = false)
             {
-                
+                buildBomb();
             }
-            else if story.get(0).equals("Escape")
+            else if story.get(0).equals("Escape" && storyPrinted = false)
             {
-                
+                escape();
             }
-            else if story.get(0).equals("Choose")
+            else if story.get(0).equals("Choose" && storyPrinted = false)
             {
-                
+                choose();
             }
         }
         System.out.println("Thank you for playing.  Goodbye.");
@@ -175,10 +176,77 @@ class Game
         System.out.println("\n\n\nYour command words are:");
         parser.showCommands();
     }
-
-    /** 
-     * Try to go to one direction. If there is an exit, enter the new
-     * room, otherwise print an error message.
-     **/
+    
+    private static void findEmma() //called in zorkArray when 2 steps on 61
+    {
+        storyPrinted = true;
+        //Ellie, implement story here
+        
+    }
+    private static void goToComms() //called in zorkArray when 2 steps on 71 which is at map[37][38]
+    {
+        storyPrinted = true;
+        //Ellie, implement story here
+        zorkArray.map[37][38] = 71
+    }
+    private static void findDavidson() //called here after the previous story mode prints
+    {
+        storyPrinted = true;
+        //Ellie, implement story here
+    }
+    private static void findMelissa() //called in zorkArray when 2 steps on 62
+    {
+        storyPrinted = true;
+        //Ellie, implement story here
+        storyPrinted = false;
+    }
+    private static void fuses() //called in zorkArray when 2 steps on 63
+    {
+        storyPrinted = true;
+        //Ellie, implement story here
+        while (collectedFuses != 10)
+        {
+            storyPrinted = true;
+        }
+        printFalse();
+    }
+    private static void fixEngine() //called here after player finds all fuses
+    {
+        storyPrinted = true;
+        //Ellie, implement story here
+        zorkArray.map[17][16] = 72
+    }
+    private static void bombs() //called in zorkArray after 2 steps on 72 which should be at map[17][16]
+    {
+        storyPrinted = true;
+        //Ellie, implement story here
+        while (collectedBombs != 10)
+        {
+            storyPrinted = true;
+        }
+        printFalse();
+    }
+    private static void buildBomb() //called here after player collects all bomb components
+    {
+        storyPrinted = true;
+        //Ellie, implement story here
+        zorkArray.map[1][16] = 73
+    }
+    private static void escape() //called in zorkArray after 2 steps on 73 which should be at map[1][16]
+    {
+        storyPrinted = true;
+        //Ellie, implement story here
+        zorkArray.map[52][11] = 74
+    }
+    private static void choose() //called in zorkArray after 2 steps on 74 which should be at map[52][11]
+    {
+        storyPrinted = true;
+        //Ellie, implement story here
+    }
+    
+    public static void printFalse()
+    {
+        story.remove(0);
+        storyPrinted = false;
     }
 }

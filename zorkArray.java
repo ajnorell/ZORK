@@ -116,15 +116,15 @@ public class zorkArray
          else if (map[pY+v][pX+h]==61)
              System.out.println("You recognize Emma as the captain of the ship");
 
-             /*"Needed something to eat? Here's a granola bar."
-               Emma hands you a granola bar which you stash in your inventory. 
-               "Paul, right? We heard you were going to be arriving soon. Glad to have you here."
-               You find yourself smiling. Working regularly with Galactic League of Extraterrestrial Exploration had always been your dream job but Emma here made you even more at ease.
-               You start to wonder if you'll see her around the ship when she starts speaking again.
-               "You'll be on the communications team, helping out Commander Davidson. You might be able to find him in the comm room."
-               "Good luck!"
-               variable changes so whenever you interact with her, she says "You might be able to find Commander Davidson in the comm room."
-             */
+             System.out.println("'Needed something to eat? Here's a granola bar.'\n
+               Emma hands you a granola bar which you stash in your inventory.\n 
+               'Paul, right? We heard you were going to be arriving soon. Glad to have you here.'\n
+               You find yourself smiling. Working regularly with Galactic League of Extraterrestrial Exploration had always been your dream job but Emma here made you even more at ease.'\n
+               You start to wonder if you'll see her around the ship when she starts speaking again.'\n
+               'You will be on the communications team, helping out Commander Davidson. You might be able to find him in the comm room.'\n
+               'Good luck!'
+                //variable changes so whenever you interact with her, she says 
+                'You might be able to find Commander Davidson in the comm room.'");
          
          else if (map[pY+v][pX+h]==62)
              System.out.println("You see the tangled mass of a broken body beneath the boulders. \n You only know it's Commander Davidson by the broken dog tag hanging from his hand");

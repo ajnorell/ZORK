@@ -55,47 +55,47 @@ class Game
         {
             Command command = parser.getCommand();
             finished = processCommand(command);
-            if (story.get(0).equals("Find Emma") && storyPrinted = false)
+            if (story.get(0).equals("Find Emma") && storyPrinted = false))
             {
                 findEmma();
             }
-            else if (story.get(0).equals("Go to comms" && storyPrinted = false)
+            else if (story.get(0).equals("Go to comms" && storyPrinted = false))
             {
                 goToComms();
             }
-            else if (story.get(0).equals("Find Davidson" && storyPrinted = false)
+            else if (story.get(0).equals("Find Davidson" && storyPrinted = false))
             {
                 findDavidson();
             }
-            else if (story.get(0).equals("Find Melissa" && storyPrinted = false)
+            else if (story.get(0).equals("Find Melissa" && storyPrinted = false))
             {
                 findMelissa();
             }
-            else if (story.get(0).equals("Fuses" && storyPrinted = false)
+            else if (story.get(0).equals("Fuses" && storyPrinted = false))
             {
                 fuses();
             }
-            else if (story.get(0).equals("Fix Engine" && storyPrinted = false)
+            else if (story.get(0).equals("Fix Engine" && storyPrinted = false))
             {
                 fixEngine();
             }
-            else if (story.get(0).equals("Bombs" && storyPrinted = false)
+            else if (story.get(0).equals("Bombs" && storyPrinted = false))
             {
                 bombs();
             }
-            else if (story.get(0).equals("Build bomb" && storyPrinted = false)
+            else if (story.get(0).equals("Build bomb" && storyPrinted = false))
             {
                 buildBomb();
             }
-            else if (story.get(0).equals("Escape" && storyPrinted = false)
+            else if (story.get(0).equals("Escape" && storyPrinted = false))
             {
                 escape();
             }
-            else if (story.get(0).equals("Choose") && storyPrinted = false)
+            else if (story.get(0).equals("Choose") && storyPrinted = false))
             {
                 choose();
             }
-            else if (story.get(0).equals("Start Story") && storyPrinted = false)
+            else if (story.get(0).equals("Start Story") && storyPrinted = false))
             {
                 startStory();
             }
@@ -132,19 +132,19 @@ class Game
         String commandWord = command.getCommandWord();
         if (commandWord.equals("//help"))
             printHelp();
-        else if(commandWord.equals("w"){
+        else if(commandWord.equals("w")){
             zorkArray.move(0, 1);
         }
-        else if(commandWord.equals("a"){
+        else if(commandWord.equals("a")){
             zorkArray.move(-1, 0);
         }
-        else if(commandWord.equals("s"){
+        else if(commandWord.equals("s")){
             zorkArray.move(1, 0);
         }
-        else if(commandWord.equals("d"){
+        else if(commandWord.equals("d")){
             zorkArray.move(0, -1);
         }
-        else if(commandWord.equals("//stats"){
+        else if(commandWord.equals("//stats")){
             System.out.println("Health: "+character.hp);
             System.out.println("Sp: "+character.sp);
             String inventory = "Inventory: < ";

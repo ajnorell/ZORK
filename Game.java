@@ -26,8 +26,7 @@ class Game
     public static int collectedFuses = 0;
     public static int collectedBombs = 0;
     private ArrayList<String> inv = ArrayList<String>("Knife");
-    public static ArrayList<String> story = ArrayList<String>();
-    story.add("Start Story").add("Find Emma").add("Go to comms").add("Find Davidson").add("Find Melissa").add("Fuses").add("Fix engine").add("Bombs").add("Build bomb").add("Escape").add("Choose");
+    public static ArrayList<String> story = ArrayList<String>("Start Story","Find Emma","Go to comms","Find Davidson","Find Melissa","Fuses","Fix engine","Bombs""Build bomb","Escape","Choose");                                    
         
     //private static 
     /**
@@ -54,47 +53,47 @@ class Game
         {
             Command command = parser.getCommand();
             finished = processCommand(command);
-            if (story.get(0).equals("Find Emma") && storyPrinted = false))
+            if (story.get(0).equals("Find Emma") && storyPrinted = false)
             {
                 findEmma();
             }
-            else if (story.get(0).equals("Go to comms" && storyPrinted = false))
+            else if (story.get(0).equals("Go to comms" && storyPrinted = false)
             {
                 goToComms();
             }
-            else if (story.get(0).equals("Find Davidson" && storyPrinted = false))
+            else if (story.get(0).equals("Find Davidson" && storyPrinted = false)
             {
                 findDavidson();
             }
-            else if (story.get(0).equals("Find Melissa" && storyPrinted = false))
+            else if (story.get(0).equals("Find Melissa" && storyPrinted = false)
             {
                 findMelissa();
             }
-            else if (story.get(0).equals("Fuses" && storyPrinted = false))
+            else if (story.get(0).equals("Fuses" && storyPrinted = false)
             {
                 fuses();
             }
-            else if (story.get(0).equals("Fix Engine" && storyPrinted = false))
+            else if (story.get(0).equals("Fix Engine" && storyPrinted = false)
             {
                 fixEngine();
             }
-            else if (story.get(0).equals("Bombs" && storyPrinted = false))
+            else if (story.get(0).equals("Bombs" && storyPrinted = false)
             {
                 bombs();
             }
-            else if (story.get(0).equals("Build bomb" && storyPrinted = false))
+            else if (story.get(0).equals("Build bomb" && storyPrinted = false)
             {
                 buildBomb();
             }
-            else if (story.get(0).equals("Escape" && storyPrinted = false))
+            else if (story.get(0).equals("Escape" && storyPrinted = false)
             {
                 escape();
             }
-            else if (story.get(0).equals("Choose") && storyPrinted = false))
+            else if (story.get(0).equals("Choose") && storyPrinted = false)
             {
                 choose();
             }
-            else if (story.get(0).equals("Start Story") && storyPrinted = false))
+            else if (story.get(0).equals("Start Story") && storyPrinted = false)
             {
                 startStory();
             }

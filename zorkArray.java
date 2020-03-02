@@ -215,26 +215,36 @@ public class zorkArray
             }
             else if (map[pY+v][pX+h]==53){
                 System.out.println("You find a granola bar. This can increase your health when eaten.");
+                player.firstAid = true;
+                player.Skills();
                 //add granola bar to inventory
                 playerOn[1]=0;
             }
             else if (map[pY+v][pX+h]==54){
                 System.out.println("You find a plasma gun. You pick it up and examine it. It's in working order.");
+                player.plasmaGun = true;
+                player.Skills();
                 //add plasma gun to inventory
                 playerOn[1]=0;
             }
             else if (map[pY+v][pX+h]==55){
                 System.out.println("You find a handful of working plasma grenades. You pocket them for later use.");
+                player.plasmaGrenade = true;
+                player.Skills();
                 //add plasma grenades to inventory
                 playerOn[1]=0;
             }
             else if (map[pY+v][pX+h]==56){
                 System.out.println("You find a crude flamethrower. Incredibly dangerous if the engine isn't working.");
+                player.flamethrower = true;
+                player.Skills();
                 //add flamethrower to inventory
                 playerOn[1]=0;
             }
             else if (map[pY+v][pX+h]==57){
                 System.out.println("You find an old sonar gun. It's tuned so high, it could probably make someone deaf.");
+                player.sonarGun = true;
+                player.Skills();
                 //add sonar gun to inventory
                 playerOn[1]=0;
             }

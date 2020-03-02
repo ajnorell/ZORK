@@ -163,7 +163,7 @@ class Game
         }
         else if (commandWord.equals("//help"))
         {
-            printHelp()
+            printHelp();
         }
         return false;
     }
@@ -196,7 +196,7 @@ class Game
     {
         storyPrinted = true;
         //Ellie, implement story here
-        zorkArray.map[37][38] = 71
+        zorkArray.map[37][38] = 71;
     }
     private static void findDavidson() //called here after the previous story mode prints
     {
@@ -225,7 +225,7 @@ class Game
     {
         storyPrinted = true;
         //Ellie, implement story here
-        zorkArray.map[17][16] = 72
+        zorkArray.map[17][16] = 72;
     }
     private static void bombs() //called in zorkArray after 2 steps on 72 which should be at map[17][16]
     {
@@ -241,13 +241,13 @@ class Game
     {
         storyPrinted = true;
         //Ellie, implement story here
-        zorkArray.map[1][16] = 73
+        zorkArray.map[1][16] = 73;
     }
     private static void escape() //called in zorkArray after 2 steps on 73 which should be at map[1][16]
     {
         storyPrinted = true;
         //Ellie, implement story here
-        zorkArray.map[52][11] = 74
+        zorkArray.map[52][11] = 74;
     }
     private static void choose() //called in zorkArray after 2 steps on 74 which should be at map[52][11]
     {

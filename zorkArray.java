@@ -130,34 +130,51 @@ public class zorkArray
              System.out.println("You see the tangled mass of a broken body beneath the boulders. \n You only know it's Commander Davidson by the broken dog tag hanging from his hand");
 
              /*start the storyline that includes Davidson
-               "Commander Davidson??" You ask frantically.
+               --"Commander Davidson??" You ask frantically.
                What the heck happened? There was that...that crash and now there's a mangled body here and...
-               You try to not panic as you think of what to do.
-               I'll go back to the cafeteria to talk to Emma
-               (can't find Emma, bump into Melissa)
+               The power goes out. You try to not panic as you think of what to do.
+               Emma is in the cafeteria...but the engineer might be more helpful in this situation. I guess I'll check the engine room
+               //new objective: find Melissa (63)
              */
          
          else if (map[pY+v][pX+h]==62){
             System.out.println("You see the tangled mass of a broken body beneath the boulders. \n You only know it's Commander Davidson by the broken dog tag hanging from his hand");
 
-             //new objective: find Melissa (63)
-             //those two coordinates might be flipped
+            //those two coordinates might be flipped
             map[43][37] = 64;
          }
          else if (map[pY+v][pX+h]==63)
              System.out.println("You see Melissa, the ship's engineer");
+             /*"Hi, Paul. You must've heard the crash. We need to restore power asap."
+               "I need you to find 7 fuses for me. I'll be collecting so other parts and will meet you back in the engine room."
+               "Don't panic, but be cautious. Think of it as a little game." Melissa joked
+               "It could be fun!"
+             */
+         //new objective: collect 7 fuses
              if ((collectedFuses != totalFuses) && (storyline(0).equals("Find the Fuses"){
                 System.out.println("You havent found all of the fuses yet! Keep Looking");  
              }
              else if (collectedFuses == totalFuses){
-              //diolauge
+              /*"You've found all the fuses..and Professor?"
+              Professor Hidgens nods hello.
+              "The door here is locked, though, so you need to find another way in."
+              "Maybe the vent system? Take the fuses and repair the engine. It'll be pretty easy, I trust you can figure it out."
+              */
+              //new objective: find the vent in the cafeteria to get into the engine room
+              //new objective: fix the engine
              }
          else if (map[pY+v][pX+h]==64)
              System.out.println("A strange man introduces himself as Professor Hidgens.");
+             /*"Good god! You must be Paul. Emma told us to expect you today."
+               "It's unfortunate you came today, since it is the day of the invasion."
+               --"The..invasion?"
+               "Yes. I've spent years preparing for what happened earlier today. You need to get to the escape pod and get out of here now!"
+               "I will accompany and help you out from here on out."
+             */
             if storyline(0).equals("Find Fuses"){
                 collectedFuses += 1;
-                System.out.println("Good god! You must be Paul. Emma told us to expect you today.");
-                System.out.println("PSA: Prof
+                System.out.println("You have attained a fuse from Professor Hidgens");
+            //variable so the professor disappears from away, new objective: return power to escape pod
             }
          else if (map[pY+v][pX+h]==71)
              System.out.println("Unfortunately for you, this door does not exist.");

@@ -25,8 +25,7 @@ class Game
     private Parser parser;
     public static int collectedFuses = 0;
     public static int collectedBombs = 0;
-    private ArrayList<String> inv = ArrayList<String>();
-    inv.add("Knife");
+    private ArrayList<String> inv = ArrayList<String>("Knife");
     public static ArrayList<String> story = ArrayList<String>();
     story.add("Start Story").add("Find Emma").add("Go to comms").add("Find Davidson").add("Find Melissa").add("Fuses").add("Fix engine").add("Bombs").add("Build bomb").add("Escape").add("Choose");
         

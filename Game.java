@@ -30,7 +30,7 @@ class Game
     public static ArrayList<String> story = ArrayList<String>();
     story.add("Start Story").add("Find Emma").add("Go to comms").add("Find Davidson").add("Find Melissa").add("Fuses").add("Fix engine").add("Bombs").add("Build bomb").add("Escape").add("Choose");
         
-    private static 
+    //private static 
     /**
      * Create the game and initialize its internal map.
      */

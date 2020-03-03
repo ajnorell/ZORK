@@ -22,13 +22,14 @@
 
 class Game 
 {
+    //zorkArray.map[52][14] = 81;
     private Parser parser;
     public static int collectedFuses = 0;
     public static int collectedBombs = 0;
     private ArrayList<String> inv = ArrayList<String>();
     inv.add("Knife");
     public static ArrayList<String> story = ArrayList<String>();
-    story.add("Start Story").add("Find Emma").add("Go to comms").add("Find Davidson").add("Find Melissa").add("Fuses").add("Fix engine").add("Bombs").add("Build bomb").add("Escape").add("Choose");
+    story.add("Find Emma").add("Go to comms").add("Find Davidson").add("Find Melissa").add("Fuses").add("Fix engine").add("Bombs").add("Build bomb").add("Escape").add("Choose");
         
     private static 
     /**
@@ -55,49 +56,45 @@ class Game
         {
             Command command = parser.getCommand();
             finished = processCommand(command);
-            if (story.get(0).equals("Find Emma") && storyPrinted = false))
+            if (story.get(0).equals("Find Emma") && storyPrinted = false)
             {
                 findEmma();
             }
-            else if (story.get(0).equals("Go to comms" && storyPrinted = false))
+            else if (story.get(0).equals("Go to comms" && storyPrinted = false)
             {
                 goToComms();
             }
-            else if (story.get(0).equals("Find Davidson" && storyPrinted = false))
+            else if (story.get(0).equals("Find Davidson" && storyPrinted = false)
             {
                 findDavidson();
             }
-            else if (story.get(0).equals("Find Melissa" && storyPrinted = false))
+            else if (story.get(0).equals("Find Melissa" && storyPrinted = false)
             {
                 findMelissa();
             }
-            else if (story.get(0).equals("Fuses" && storyPrinted = false))
+            else if (story.get(0).equals("Fuses" && storyPrinted = false)
             {
                 fuses();
             }
-            else if (story.get(0).equals("Fix Engine" && storyPrinted = false))
+            else if (story.get(0).equals("Fix Engine" && storyPrinted = false)
             {
                 fixEngine();
             }
-            else if (story.get(0).equals("Bombs" && storyPrinted = false))
+            else if (story.get(0).equals("Bombs" && storyPrinted = false)
             {
                 bombs();
             }
-            else if (story.get(0).equals("Build bomb" && storyPrinted = false))
+            else if (story.get(0).equals("Build bomb" && storyPrinted = false)
             {
                 buildBomb();
             }
-            else if (story.get(0).equals("Escape" && storyPrinted = false))
+            else if (story.get(0).equals("Escape" && storyPrinted = false)
             {
                 escape();
             }
-            else if (story.get(0).equals("Choose") && storyPrinted = false))
+            else if (story.get(0).equals("Choose") && storyPrinted = false)
             {
                 choose();
-            }
-            else if (story.get(0).equals("Start Story") && storyPrinted = false))
-            {
-                startStory();
             }
         }
         System.out.println("Thank you for playing.  Goodbye.");
@@ -109,7 +106,7 @@ class Game
     private void printWelcome()
     {
         System.out.println();
-        System.out.println("Welcome to Starship 15 A2! I'm your assistant, MegaGirl.");
+        System.out.println("Welcome to Starship 15 A2! I'm your assistant, Alexa.");
         System.out.println("As you awaken from hypersleep, please be aware of your surroundings.\nTake a moment to look at the map and familiarize yourself with the ship.\n");
         System.out.println("When you're ready, use W,A,S,D to move about the ship.");
         System.out.println("Type '//help' if you need help.");
@@ -132,19 +129,19 @@ class Game
         String commandWord = command.getCommandWord();
         if (commandWord.equals("//help"))
             printHelp();
-        else if(commandWord.equals("w")){
+        else if(commandWord.equals("w"){
             zorkArray.move(0, 1);
         }
-        else if(commandWord.equals("a")){
+        else if(commandWord.equals("a"){
             zorkArray.move(-1, 0);
         }
-        else if(commandWord.equals("s")){
+        else if(commandWord.equals("s"){
             zorkArray.move(1, 0);
         }
-        else if(commandWord.equals("d")){
+        else if(commandWord.equals("d"){
             zorkArray.move(0, -1);
         }
-        else if(commandWord.equals("//stats")){
+        else if(commandWord.equals("//stats"){
             System.out.println("Health: "+character.hp);
             System.out.println("Sp: "+character.sp);
             String inventory = "Inventory: < ";
@@ -181,41 +178,57 @@ class Game
         parser.showCommands();
     }
     
-    private static void startStory()
-    {
-        storyPrinted = true;
-        //Ellie, implement story here
-    }
     private static void findEmma() //called in zorkArray when 2 steps on 61
     {
         storyPrinted = true;
-        //Ellie, implement story here
+        System.out.println("As you look around, you see a large TV tuned to a news program \nThe reporter begins speaking.");
+        System.out.println("'A space station known as Starship 15 A2 has been launched under the Galactic League of Extraterrestrial Exploration and \nhas been tasked with researching the Apotheosis Virus. \nThis is Dan with the Hatchetfield morning news. Back to you, Donna.'");
+        System.out.println("You turn away from the TV, ready to start your dream job. \nAnd finding the captain of the ship is a good place to start");
+        System.out.println("[New Objective] Head to the Cafeteria to find Emma.");
         
     }
     private static void goToComms() //called in zorkArray when 2 steps on 71 which is at map[37][38]
     {
         storyPrinted = true;
-        //Ellie, implement story here
+        System.out.println("You see Emma, the Captain of the ship.");
+        System.out.println("'Hey! Paul, right?' she calls to you. 'We heard you'd be arriving soon. You're on the communications team with Commander Davidson.'");
+        System.out.println("You find yourself smiling. Working regularly with Galactic League of Extraterrestrial Exploration had always been your dream job but Emma here made you even more at ease.");
+        System.out.println("'Here, take a granola bar. They're a new formula to boost your immune system. Good luck, Paul! See you around.'");
+        inv.add("Granola Bar");
+        System.out.println("[New Objective] Go to the Communications Room");
+        //           vvv this needs to be Emma's coordinates
+        zorkArray.map[][] = 0;
         zorkArray.map[37][38] = 71
     }
-    private static void findDavidson() //called here after the previous story mode prints
+    private static void findDavidson() //called in zorkArray when map[][] = 2;
     {
         storyPrinted = true;
-        //Ellie, implement story here
+        System.out.println("As you enter the empty Comms Room, you look around at the tables lined with monitors. All of them blink red.");
+        System.out.println("You lean over to look at the monitors. A large, blinking dot moves closer to the outline of the ship.");
+        System.out.println("As the dot collides with the ship, you hear a large crash. \nThe ship jerks around violently, throwing you to the ground. \nThen, everything goes dark.");
+        System.out.println("Okay, don't panic. First things first. Find the Commander.");
+        System.out.println("[New Objective] Find Commmander Davidson");
     }
     private static void findMelissa() //called in zorkArray when 2 steps on 62
     {
         storyPrinted = true;
-        System.out.println("You see the tangled mass of a broken body beneath the boulders. \n You only know it's Commander Davidson by the broken dog tag hanging from his hand");
-        System.out.println("'Commander Davidson?!' you ask frantically.\nWhat could have happened?! There was that... that crash... and now...");
-        System.out.println("You swallow your fear and think rationally. What's the best thing to do?\nMaybe turning on the power. The ship's engineer, Melissa, should know how.\nNew Objective: find Melissa");
+        System.out.println("You see the tangled mass of a broken body beneath the boulders. \nYou only know it's Commander Davidson by the broken dog tag hanging from his hand");
+        System.out.println("'Commander Davidson??' You ask frantically.");
+        System.out.println("'What the heck happened? There was that...that crash and now there's a mangled body here and...'");
+        System.out.println("The power goes out. You try to not panic as you think of what to do.");
+        System.out.println("I'll go back to the cafeteria to talk to Emma");
+        System.out.println("Although... the engineer might be more helpful in this situation. I guess I'll check the engine room");
+        System.out.println("[New Objective] Find Melissa");
         storyPrinted = false;
     }
     private static void fuses() //called in zorkArray when 2 steps on 63
     {
         storyPrinted = true;
-        //Ellie, implement story here
-        while (collectedFuses != 10)
+        System.out.println("Finally, you find Melissa. She waves you over frantically.");
+        System.out.println("'Thank God I found you, Paul,' she says. \n'We need to restore the power as soon as possible or we'll asphyxiate. \nThe Engine Room is blocked by this rubble. \nIf you could find a way in and collect just 7 fuses for me, we could easily fix this.'");
+        System.out.println("Melissa smiles awkwardly. 'Don't panic, but be cautious. Think of it as a game,' she jokes. \n'It could be fun!'");
+        System.out.println("[New Objective] Find 7 fuses");
+        while (collectedFuses != 7)
         {
             storyPrinted = true;
         }
@@ -224,13 +237,23 @@ class Game
     private static void fixEngine() //called here after player finds all fuses
     {
         storyPrinted = true;
-        //Ellie, implement story here
+        System.out.println("You pick up the last fuse. 'Great job!' the Professor says. \n'Now, we must return these to the engine. Do you know the way there?'");
+        System.out.println("'Melissa said the door was blocked,' you reply.");
+        System.out.println("'Hmm. Perhaps the ventilation system will do. \nMs. Melissa told me the easiest access to the vents is in the kitchen. Perhaps try there.'");
+        System.out.println("[New Objective] Access the vents and install the fuses");
         zorkArray.map[17][16] = 72
     }
     private static void bombs() //called in zorkArray after 2 steps on 72 which should be at map[17][16]
     {
         storyPrinted = true;
-        //Ellie, implement story here
+        System.out.println("'Amazing job, Paul! Now, I don't mean to put a damper on things, but there is one more task...' the Professor trails off.");
+        System.out.println("You sigh in exasperation. 'What is it?'");
+        System.out.println("'Well, the Apotheosis Virus must not spread. So we must--'");
+        System.out.println("'Destroy the ship,' you finish.");
+        System.out.println("'There should be some bomb components laying around. You may have found some already. \nWe need 10. How many do you currently have?'");
+        System.out.println("'I've got "+collectedFuses+",' you reply.");
+        System.out.println("'Right, then. Let's find the rest.'");
+        System.out.println("[New Objective] Find the rest of the bomb components");
         while (collectedBombs != 10)
         {
             storyPrinted = true;
@@ -240,13 +263,21 @@ class Game
     private static void buildBomb() //called here after player collects all bomb components
     {
         storyPrinted = true;
-        //Ellie, implement story here
+        System.out.println("'We're almost done here, Paul,' Professor Hidgens says. \n'All we have to do is attach the bomb to the back of the engine.'");
+        System.out.println("'Right. Here we go,' you mutter.");
+        System.out.println("[New Objective] Attach the bomb to the back of the engine");
         zorkArray.map[1][16] = 73
     }
     private static void escape() //called in zorkArray after 2 steps on 73 which should be at map[1][16]
     {
         storyPrinted = true;
-        //Ellie, implement story here
+        System.out.println("After you attach the bomb, you move to arm it. \nSuddenly, the whole ship seems to shake and rattle. \nYou spin around and come face-to-face with Commander Davidson--back from the dead.");
+        //Shane, add a boss fight here
+        System.out.println("As you stand over Davidson's dead body, blue ooze leaking from his brain, the beeping of the bomb brings you back to reality.");
+        System.out.println("'Paul?' Melissa's voice catches your attention. 'Paul, are you okay? You need to get out of here!'");
+        System.out.println("'But... the bomb...' you try for words, but they don't come.");
+        System.out.println("'It's okay. I'll arm it. Just go! We need at least one survivor.' \nMelissa turns you around and pushes you towards the exit. \nAs you leave, you catch a glimpse of blue ooze on Melissa's shoulder.");
+        System.out.println("[New Objective] Get to the escape pod");
         zorkArray.map[52][11] = 74
     }
     private static void choose() //called in zorkArray after 2 steps on 74 which should be at map[52][11]

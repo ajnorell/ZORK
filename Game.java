@@ -302,7 +302,15 @@ class Game
         System.out.println("Melissa gestures behind you. 'Is the escape pod ready?'");
         System.out.println("You nod, but realize there is only one extra spot on the escape pod.");
         System.out.println("They've both been helpful and kind to you since your arrival, but there's reason to be suspicious of both.");
-        System.out.println("You give them both 30 seconds to persuade your decision...");
+        System.out.println("'Hurry,' Melissa urges, 'the bomb will go off very soon!'");
+        System.out.println("You consider between the two. \nEmma, the captain of the ship, has been helpful since your arrival, providing you food and help from the beginning. \nMelissa, however, did help you start the power and arm the bomb. But that blue ooze matches the aliens perfectly.");
+        System.out.println("After considering the options (and the possibility that either could be infected), you choose...");
+        String choice = command;
+        System.out.println(choice);
+        System.out.println("Quickly, you grab her hand and pull her into the escape pod. \nThe door shuts behind you, leaving the space station behind as you blast into space.");
+        System.out.println("You watch through the dusty window as Starship 15 A2 obliterates into nothing but rubble.");
+        System.out.println("'We did it!' you shout. \nAs you turn to "+choice+", you see a drop of blue ooze dripping from her eyes.");
+        System.out.println("'"+choice+"?' you ask. She turns to you slowly. \nThe voice that emanates from her mouth is not her own. \nWe will not be resisted, Paul.");
     }
     
     public static void nextStory()

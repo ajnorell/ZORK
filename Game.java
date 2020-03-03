@@ -19,7 +19,8 @@
  *  rooms, creates the parser and starts the game.  It also evaluates the
  *  commands that the parser returns.
  */
-import java.util.*
+import java.util.*;
+
 class Game 
 {
     private Parser parser;

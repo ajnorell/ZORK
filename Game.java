@@ -232,13 +232,6 @@ class Game
     }
     private static void fuses() //called in zorkArray when 2 steps on 63
     {
-        /*"Hi, Paul. You must've heard the crash. We need to restore power asap."
-               "I need you to find 7 fuses for me. I'll be collecting so other parts and will meet you back in the engine room."
-               "Don't panic, but be cautious. Think of it as a little game." Melissa joked
-               "It could be fun!"
-             */
-         //new objective: collect 7 fuses
-        //new objective: find Professor
         storyPrinted = true;
         System.out.println("Finally, you find Melissa. She waves you over frantically.");
         System.out.println("'Thank God I found you, Paul,' she says. \n'We need to restore the power as soon as possible or we'll asphyxiate. \nThe Engine Room is blocked by this rubble. \nIf you could find a way in and collect just 7 fuses for me, we could easily fix this.'");
@@ -299,11 +292,14 @@ class Game
     private static void choose() //called in zorkArray after 2 steps on 74 which should be at map[52][11]
     {
         storyPrinted = true;
-        /*You get ready to launch the escape pod when Emma and Melissa show up.
-          They've both been helpful and kind to you since your arrival.
-          Since there is only one extra space on the escape pod, you need to choose who comes with you.
-          To decide, you've given them both a minute to persuade your decision.
-        */
+        System.out.println("You get ready to launch the escape pod when Emma and Melissa show up.");
+        System.out.println("'Melissa? Emma? I thought you both died.' They shake their head.");
+        System.out.println("'I've been in the comms room. There isn't a signal anywhere...' Emma explains.");
+        System.out.println("'I successfully armed the bomb. It should be going off any second now.'");
+        System.out.println("Melissa gestures behind you. 'Is the escape pod ready?'");
+        System.out.println("You nod, but realize there is only one extra spot on the escape pod.");
+        System.out.println("They've both been helpful and kind to you since your arrival, but there's reason to be suspicious of both.");
+        System.out.println("You give them both 30 seconds to persuade your decision...");
     }
     
     public static void nextStory()

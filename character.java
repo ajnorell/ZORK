@@ -171,6 +171,12 @@ public class character{
     public int getLevel(){
         return level;
     }
+    public int getHp(){
+        return hp;
+    }
+    public int getSp(){
+        return sp;
+    }
     public String getName(){
         return name;
     }

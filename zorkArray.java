@@ -204,7 +204,7 @@ public class zorkArray
                 playerOn[1]=0;
             }
             else if (map[pY+v][pX+h]==8){
-                System.out.println("You encounter an alien aboard the ship. It attacks you without hesitation.");
+                System.out.println("You encounter an alien leaking blue ooze. It attacks you without hesitation.");
                 //start combat
                 if(count == 1){
                     battle.battle(player, enemy1);

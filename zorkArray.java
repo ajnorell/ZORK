@@ -220,6 +220,26 @@ public class zorkArray
                 count ++;
                 playerOn[1]=0;
             }
+            else if (map[pY+v][pX+h]==71)
+            {
+                Game.nextStory();
+                playerOn[1]=0;
+            }
+            else if (map[pY+v][pX+h]==72)
+            {
+                Game.nextStory();
+                playerOn[1]=0;
+            }
+            else if (map[pY+v][pX+h]==73)
+            {
+                Game.nextStory();
+                playerOn[1]=0;
+            }
+            else if (map[pY+v][pX+h]==74)
+            {
+                Game.nextStory();
+                playerOn[1]=0;
+            }
             else{
                 System.out.println("You take a step");
                 playerOn[1]=0;

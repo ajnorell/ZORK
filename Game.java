@@ -211,8 +211,15 @@ class Game
     }
     private static void fuses() //called in zorkArray when 2 steps on 63
     {
+        /*"Hi, Paul. You must've heard the crash. We need to restore power asap."
+               "I need you to find 7 fuses for me. I'll be collecting so other parts and will meet you back in the engine room."
+               "Don't panic, but be cautious. Think of it as a little game." Melissa joked
+               "It could be fun!"
+             */
+         //new objective: collect 7 fuses
+        //new objective: find Professor
         storyPrinted = true;
-        //Ellie, implement story here
+        
         while (collectedFuses != 10)
         {
             storyPrinted = true;
@@ -222,13 +229,26 @@ class Game
     private static void fixEngine() //called here after player finds all fuses
     {
         storyPrinted = true;
-        //Ellie, implement story here
-        zorkArray.map[17][16] = 72;
+
+        /*"You've found all the fuses..and Professor?"
+              Professor Hidgens nods hello.
+              "The door here is locked, though, so you need to find another way in."
+              "Maybe the vent system? Take the fuses and repair the engine. It'll be pretty easy, I trust you can figure it out."
+              */
+              //new objective: find the vent in the cafeteria to get into the engine room
+              //new objective: fix the engine
+        zorkArray.map[17][16] = 72
+
     }
     private static void bombs() //called in zorkArray after 2 steps on 72 which should be at map[17][16]
     {
         storyPrinted = true;
-        //Ellie, implement story here
+        /*Engine has been fixed.
+        "Good job," Prof says from behind you.
+        "We should defeat the aliens now. If you find the 10 bomb components, we can kill the source of their power"
+        He gestures behind engine
+        */
+        //new objective, find bomb components
         while (collectedBombs != 10)
         {
             storyPrinted = true;
@@ -238,19 +258,34 @@ class Game
     private static void buildBomb() //called here after player collects all bomb components
     {
         storyPrinted = true;
-        //Ellie, implement story here
-        zorkArray.map[1][16] = 73;
+        /*Professor Hidgens speaks up again.
+        "We can return to the engine now and finally get rid of the aliens."
+        "Then we'll need to escape on an escape pod since the power has returned."
+        You place the bomb down and set the timer.
+        You decide to navigate back to the front of the station, to the escape pods. 
+        Perhaps other survivors will be there, too.
+        */
+        zorkArray.map[1][16] = 73
+
     }
     private static void escape() //called in zorkArray after 2 steps on 73 which should be at map[1][16]
     {
         storyPrinted = true;
-        //Ellie, implement story here
-        zorkArray.map[52][11] = 74;
-    }
+        /*You arrive at the escape pod, no one in sight.
+        Suddenly, another alien appears, this time more advanced than the others.
+        You get ready for combat, but nore before realizing Hidgens has left you alone.
+        Coward, you think to yourself before the fight starts.
+        */
+        zorkArray.map[52][11] = 74
+
     private static void choose() //called in zorkArray after 2 steps on 74 which should be at map[52][11]
     {
         storyPrinted = true;
-        //Ellie, implement story here
+        /*You get ready to launch the escape pod when Emma and Melissa show up.
+          They've both been helpful and kind to you since your arrival.
+          Since there is only one extra space on the escape pod, you need to choose who comes with you.
+          To decide, you've given them both a minute to persuade your decision.
+        */
     }
     
     public static void nextStory()

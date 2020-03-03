@@ -27,7 +27,7 @@ class Game
     public static int collectedFuses = 0;
     public static int collectedBombs = 0;
     private ArrayList<String> inv = ArrayList<String>("Knife");
-    public static ArrayList<String> story = ArrayList<String>("Start Story","Find Emma","Go to comms","Find Davidson","Find Melissa","Fuses","Fix engine","Bombs""Build bomb","Escape","Choose");                                    
+    public  ArrayList<String> story = ArrayList<String>("Start Story","Find Emma","Go to comms","Find Davidson","Find Melissa","Fuses","Fix engine","Bombs""Build bomb","Escape","Choose");                                    
         
     //private static 
     /**

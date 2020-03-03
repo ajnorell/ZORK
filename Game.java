@@ -20,6 +20,9 @@
  *  commands that the parser returns.
  */
 import java.util.*;
+battle battle = new battle();
+String[] attacks = {"Galactic Punch", "Supersonic Scream", "Guard", "Punch"};
+enemy boss = new enemy(10, "Commander Davidson", 500, 13, 999, attacks);
 class Game 
 {
     //zorkArray.map[52][14] = 81;
@@ -281,7 +284,7 @@ class Game
     {
         storyPrinted = true;
         System.out.println("After you attach the bomb, you move to arm it. \nSuddenly, the whole ship seems to shake and rattle. \nYou spin around and come face-to-face with Commander Davidson--back from the dead.");
-        //Shane, add a boss fight here
+        battle.battle(character.player,boss);
         System.out.println("As you stand over Davidson's dead body, blue ooze leaking from his brain, the beeping of the bomb brings you back to reality.");
         System.out.println("'Paul?' Melissa's voice catches your attention. 'Paul, are you okay? You need to get out of here!'");
         System.out.println("'But... the bomb...' you try for words, but they don't come.");

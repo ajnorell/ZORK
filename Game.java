@@ -237,7 +237,7 @@ class Game
               */
               //new objective: find the vent in the cafeteria to get into the engine room
               //new objective: fix the engine
-        zorkArray.map[17][16] = 72
+        zorkArray.map[17][16] = 72;
 
     }
     private static void bombs() //called in zorkArray after 2 steps on 72 which should be at map[17][16]
@@ -265,7 +265,7 @@ class Game
         You decide to navigate back to the front of the station, to the escape pods. 
         Perhaps other survivors will be there, too.
         */
-        zorkArray.map[1][16] = 73
+        zorkArray.map[1][16] = 73;
 
     }
     private static void escape() //called in zorkArray after 2 steps on 73 which should be at map[1][16]
@@ -276,7 +276,7 @@ class Game
         You get ready for combat, but nore before realizing Hidgens has left you alone.
         Coward, you think to yourself before the fight starts.
         */
-        zorkArray.map[52][11] = 74
+        zorkArray.map[52][11] = 74;
 
     private static void choose() //called in zorkArray after 2 steps on 74 which should be at map[52][11]
     {

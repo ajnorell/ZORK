@@ -113,8 +113,8 @@ public static void battle(character c, enemy e){
         }
         else{
             System.out.println("An error has occured");
-        c.tempHp = c.hp;
-        c.tempSp = c.sp;
         }
+        c.tempHp = c.getHp();
+        c.tempSp = c.getSp();       
     }    
 }

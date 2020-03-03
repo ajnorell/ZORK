@@ -25,12 +25,10 @@ class Game
     private Parser parser;
     public static int collectedFuses = 0;
     public static int collectedBombs = 0;
-    private ArrayList<String> inv = ArrayList<String>();
-    inv.add("Knife");
-    public static ArrayList<String> story = ArrayList<String>();
-    story.add("Start Story").add("Find Emma").add("Go to comms").add("Find Davidson").add("Find Melissa").add("Fuses").add("Fix engine").add("Bombs").add("Build bomb").add("Escape").add("Choose");
+    private ArrayList<String> inv = ArrayList<String>("Knife");
+    public static ArrayList<String> story = ArrayList<String>("Start Story","Find Emma","Go to comms","Find Davidson","Find Melissa","Fuses","Fix engine","Bombs""Build bomb","Escape","Choose");                                    
         
-    private static 
+    //private static 
     /**
      * Create the game and initialize its internal map.
      */
@@ -132,19 +130,19 @@ class Game
         String commandWord = command.getCommandWord();
         if (commandWord.equals("//help"))
             printHelp();
-        else if(commandWord.equals("w"){
+        else if(commandWord.equals("w")){
             zorkArray.move(0, 1);
         }
-        else if(commandWord.equals("a"){
+        else if(commandWord.equals("a")){
             zorkArray.move(-1, 0);
         }
-        else if(commandWord.equals("s"){
+        else if(commandWord.equals("s")){
             zorkArray.move(1, 0);
         }
-        else if(commandWord.equals("d"){
+        else if(commandWord.equals("d")){
             zorkArray.move(0, -1);
         }
-        else if(commandWord.equals("//stats"){
+        else if(commandWord.equals("//stats")){
             System.out.println("Health: "+character.hp);
             System.out.println("Sp: "+character.sp);
             String inventory = "Inventory: < ";
@@ -163,7 +161,7 @@ class Game
         }
         else if (commandWord.equals("//help"))
         {
-            printHelp()
+            printHelp();
         }
         return false;
     }
@@ -196,7 +194,7 @@ class Game
     {
         storyPrinted = true;
         //Ellie, implement story here
-        zorkArray.map[37][38] = 71
+        zorkArray.map[37][38] = 71;
     }
     private static void findDavidson() //called here after the previous story mode prints
     {
@@ -231,6 +229,7 @@ class Game
     private static void fixEngine() //called here after player finds all fuses
     {
         storyPrinted = true;
+
         /*"You've found all the fuses..and Professor?"
               Professor Hidgens nods hello.
               "The door here is locked, though, so you need to find another way in."
@@ -239,6 +238,7 @@ class Game
               //new objective: find the vent in the cafeteria to get into the engine room
               //new objective: fix the engine
         zorkArray.map[17][16] = 72
+
     }
     private static void bombs() //called in zorkArray after 2 steps on 72 which should be at map[17][16]
     {
@@ -266,6 +266,7 @@ class Game
         Perhaps other survivors will be there, too.
         */
         zorkArray.map[1][16] = 73
+
     }
     private static void escape() //called in zorkArray after 2 steps on 73 which should be at map[1][16]
     {
@@ -276,7 +277,7 @@ class Game
         Coward, you think to yourself before the fight starts.
         */
         zorkArray.map[52][11] = 74
-    }
+
     private static void choose() //called in zorkArray after 2 steps on 74 which should be at map[52][11]
     {
         storyPrinted = true;

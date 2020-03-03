@@ -123,59 +123,26 @@ public class zorkArray
          else if (map[pY+v][pX+h]==39)
              System.out.println("A bed blocks your path");
          else if (map[pY+v][pX+h]==61)
-             System.out.println("You recognize Emma as the captain of the ship");
-
-             /*"Needed something to eat? Here's a granola bar."
-               Emma hands you a granola bar which you stash in your inventory. 
-               "Paul, right? We heard you were going to be arriving soon. Glad to have you here."
-               You find yourself smiling. Working regularly with Galactic League of Extraterrestrial Exploration had always been your dream job but Emma here made you even more at ease.
-               You start to wonder if you'll see her around the ship when she starts speaking again.
-               "You'll be on the communications team, helping out Commander Davidson. You might be able to find him in the comm room."
-               "Good luck!"
-               variable changes so whenever you interact with her, she says "You might be able to find Commander Davidson in the comm room."
-             */
-         
+             Game.nextStory();
          else if (map[pY+v][pX+h]==62)
              Game.nextStory();
-             // start objective
-         
          else if (map[pY+v][pX+h]==63)
-             System.out.println("You see Melissa, the ship's engineer");
-             /*"Hi, Paul. You must've heard the crash. We need to restore power asap."
-               "I need you to find 7 fuses for me. I'll be collecting so other parts and will meet you back in the engine room."
-               "Don't panic, but be cautious. Think of it as a little game." Melissa joked
-               "It could be fun!"
-             */
-         //new objective: collect 7 fuses
-             if ((collectedFuses != totalFuses) && (storyline(0).equals("Find the Fuses"){
-                System.out.println("You havent found all of the fuses yet! Keep Looking");  
-             }
-             else if (collectedFuses == totalFuses){
-              /*"You've found all the fuses..and Professor?"
-              Professor Hidgens nods hello.
-              "The door here is locked, though, so you need to find another way in."
-              "Maybe the vent system? Take the fuses and repair the engine. It'll be pretty easy, I trust you can figure it out."
-              */
-              //new objective: find the vent in the cafeteria to get into the engine room
-              //new objective: fix the engine
-             }
+             Game.nextStory();
          else if (map[pY+v][pX+h]==64)
-             System.out.println("A strange man introduces himself as Professor Hidgens.");
-             /*"Good god! You must be Paul. Emma told us to expect you today."
-               "It's unfortunate you came today, since it is the day of the invasion."
-               --"The..invasion?"
-               "Yes. I've spent years preparing for what happened earlier today. You need to get to the escape pod and get out of here now!"
-               "I will accompany and help you out from here on out."
-             */
-            if storyline(0).equals("Find Fuses"){
-                collectedFuses += 1;
-            //variable so the professor disappears from away, new objective: return power to escape pod
-                System.out.println("Good god! You must be Paul. Emma told us to expect you today.");
-                System.out.println("You have attained a fuse from Professor Hidgens");
-                System.out.println("PSA: Prof Higgins will now follow you around");
-            }
+         {
+             System.out.println("You find a 'kinda hot' man in a labcoat.");
+             System.out.println("'Good God! You must be Paul. Emma told us to expect you today,' the man says.");
+             System.out.println("'It's very unfortunate you came today, since it is the day of the invasion.'");
+             System.out.println("'The... invasion?' you ask.");
+             System.out.println("'Yes, my dear boy. I've spent years preparing for this. \nWe need to get to the escape pod and get out of this place!'");
+             System.out.println("'Here, take this fuse I found earlier. In return, you will allow me to accompany you.'");
+             Game.collectedFuses += 1;
+             System.out.println("'I don't even know your name,' you say.");
+             System.out.println("'Right, right. I'm Professor Hidgens. Now, off we go.'");
+         }
          else if (map[pY+v][pX+h]==71)
-             System.out.println("Unfortunately for you, this door does not exist.");
+             System.out.println("Unfortunately for you, this door does not actually exist.");
+         //implement all the 7's we have to step on
 
          else{
             if (map[pY+v][pX+h]==4){

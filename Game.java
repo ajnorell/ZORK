@@ -19,7 +19,7 @@
  *  rooms, creates the parser and starts the game.  It also evaluates the
  *  commands that the parser returns.
  */
-
+import java.util.*;
 class Game 
 {
     //zorkArray.map[52][14] = 81;
@@ -27,11 +27,9 @@ class Game
     public static int collectedFuses = 0;
     public static int collectedBombs = 0;
     private ArrayList<String> inv = ArrayList<String>();
-    inv.add("Knife");
     public static ArrayList<String> story = ArrayList<String>();
-    story.add("Find Emma").add("Go to comms").add("Find Davidson").add("Find Melissa").add("Fuses").add("Fix engine").add("Bombs").add("Build bomb").add("Escape").add("Choose");
         
-    private static 
+    //private static 
     /**
      * Create the game and initialize its internal map.
      */
@@ -44,7 +42,18 @@ class Game
      *  Main play routine.  Loops until end of play.
      */
     public void play() 
-    {            
+    {   
+        inv.add("Knife");
+        story.add("Find Emma");
+        story.add("Go to comms");
+        story.add("Find Davidson");
+        story.add("Find Melissa");
+        story.add("Fuses");
+        story.add("Fix engine");
+        story.add("Bombs");
+        story.add("Build bomb");
+        story.add("Escape");
+        story.add("Choose");
         printWelcome();
 
         // Enter the main command loop.  Here we repeatedly read commands and
@@ -160,7 +169,7 @@ class Game
         }
         else if (commandWord.equals("//help"))
         {
-            printHelp()
+            printHelp();
         }
         return false;
     }
@@ -223,6 +232,13 @@ class Game
     }
     private static void fuses() //called in zorkArray when 2 steps on 63
     {
+        /*"Hi, Paul. You must've heard the crash. We need to restore power asap."
+               "I need you to find 7 fuses for me. I'll be collecting so other parts and will meet you back in the engine room."
+               "Don't panic, but be cautious. Think of it as a little game." Melissa joked
+               "It could be fun!"
+             */
+         //new objective: collect 7 fuses
+        //new objective: find Professor
         storyPrinted = true;
         System.out.println("Finally, you find Melissa. She waves you over frantically.");
         System.out.println("'Thank God I found you, Paul,' she says. \n'We need to restore the power as soon as possible or we'll asphyxiate. \nThe Engine Room is blocked by this rubble. \nIf you could find a way in and collect just 7 fuses for me, we could easily fix this.'");
@@ -283,7 +299,11 @@ class Game
     private static void choose() //called in zorkArray after 2 steps on 74 which should be at map[52][11]
     {
         storyPrinted = true;
-        //Ellie, implement story here
+        /*You get ready to launch the escape pod when Emma and Melissa show up.
+          They've both been helpful and kind to you since your arrival.
+          Since there is only one extra space on the escape pod, you need to choose who comes with you.
+          To decide, you've given them both a minute to persuade your decision.
+        */
     }
     
     public static void nextStory()

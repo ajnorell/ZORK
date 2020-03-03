@@ -136,21 +136,9 @@ public class zorkArray
              */
          
          else if (map[pY+v][pX+h]==62)
-             System.out.println("You see the tangled mass of a broken body beneath the boulders. \n You only know it's Commander Davidson by the broken dog tag hanging from his hand");
-             //start the storyline that includes Davidson
-             System.out.println("'Commander Davidson??' You ask frantically.");
-             System.out.println("'What the heck happened? There was that...that crash and now there's a mangled body here and...'");
-             System.out.println("The power goes out. You try to not panic as you think of what to do.");
-             System.out.println("I'll go back to the cafeteria to talk to Emma");
-             System.out.println("Emma is in the cafeteria...but the engineer might be more helpful in this situation. I guess I'll check the engine room");
+             Game.nextStory();
              // start objective
-                     
-         else if (map[pY+v][pX+h]==62){
-            System.out.println("You see the tangled mass of a broken body beneath the boulders. \n You only know it's Commander Davidson by the broken dog tag hanging from his hand");
-
-            //those two coordinates might be flipped
-            map[43][37] = 64;
-         }
+         
          else if (map[pY+v][pX+h]==63)
              System.out.println("You see Melissa, the ship's engineer");
              /*"Hi, Paul. You must've heard the crash. We need to restore power asap."
@@ -215,26 +203,36 @@ public class zorkArray
             }
             else if (map[pY+v][pX+h]==53){
                 System.out.println("You find a granola bar. This can increase your health when eaten.");
+                player.firstAid = true;
+                player.Skills();
                 //add granola bar to inventory
                 playerOn[1]=0;
             }
             else if (map[pY+v][pX+h]==54){
                 System.out.println("You find a plasma gun. You pick it up and examine it. It's in working order.");
+                player.plasmaGun = true;
+                player.Skills();
                 //add plasma gun to inventory
                 playerOn[1]=0;
             }
             else if (map[pY+v][pX+h]==55){
                 System.out.println("You find a handful of working plasma grenades. You pocket them for later use.");
+                player.plasmaGrenade = true;
+                player.Skills();
                 //add plasma grenades to inventory
                 playerOn[1]=0;
             }
             else if (map[pY+v][pX+h]==56){
                 System.out.println("You find a crude flamethrower. Incredibly dangerous if the engine isn't working.");
+                player.flamethrower = true;
+                player.Skills();
                 //add flamethrower to inventory
                 playerOn[1]=0;
             }
             else if (map[pY+v][pX+h]==57){
                 System.out.println("You find an old sonar gun. It's tuned so high, it could probably make someone deaf.");
+                player.sonarGun = true;
+                player.Skills();
                 //add sonar gun to inventory
                 playerOn[1]=0;
             }

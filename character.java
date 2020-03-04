@@ -7,23 +7,23 @@
  */
 import java.util.*;
 public class character{
-    private int strength;
-    private static int hp;
+    public int strength;
+    public static int hp;
     public int tempHp;
-    private int firepower;
-    private int sp;
+    public int firepower;
+    public static int sp;
     public int tempSp;
-    private String name;
-    private int level;
-    private int exp;
-    private boolean guard;
+    public String name;
+    public int level;
+    public int exp;
+    public boolean guard;
     public boolean slash = true;
     public boolean firstAid = false;
     public boolean plasmaGun = false;
     public boolean sonarGun = false;
     public boolean flamethrower = false;
     public boolean plasmaGrenade = false;
-    private ArrayList<String> skills = new ArrayList<String>();
+    public ArrayList<String> skills = new ArrayList<String>();
     public character(String n){
         strength = 5;
         name = n;

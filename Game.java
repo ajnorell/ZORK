@@ -30,8 +30,8 @@ class Game
     public static ArrayList<String> inv = new ArrayList<String>(); //says '-> expected' in BlueJay??????????
     public static ArrayList<String> story = new ArrayList<String>(); //ditto!!!!!!
     public static boolean storyPrinted = false;
-    // are these next three all private???
     private static Battle battle = new Battle();
+    public static boolean finished = false;
   
         
     public Game() 
@@ -60,7 +60,6 @@ class Game
         // Enter the main command loop.  Here we repeatedly read commands and
         // execute them until the game is over.
                 
-        boolean finished = false;
         while (! finished)
         {
             Command command = parser.getCommand();

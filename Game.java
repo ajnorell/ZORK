@@ -27,13 +27,12 @@ class Game
     private Parser parser;
     public static int collectedFuses = 0;
     public static int collectedBombs = 0;
-    public static ArrayList<String> inv = ArrayList<String>(); //says '-> expected' in BlueJay??????????
-    public static ArrayList<String> story = ArrayList<String>(); //ditto!!!!!!
-    
+    public static ArrayList<String> inv = new ArrayList<String>(); //says '-> expected' in BlueJay??????????
+    public static ArrayList<String> story = new ArrayList<String>(); //ditto!!!!!!
+    public static boolean storyPrinted = false;
     // are these next three all private???
-    private static battle battle = new battle();
-    private static String[] attacks = {"Galactic Punch", "Supersonic Scream", "Guard", "Punch"};
-    private static enemy boss = new enemy(10, "Commander Davidson", 500, 13, 999, attacks);
+    private static Battle battle = new Battle();
+  
         
     public Game() 
     {
@@ -62,48 +61,47 @@ class Game
         // execute them until the game is over.
                 
         boolean finished = false;
-        boolean storyPrinted = false;
         while (! finished)
         {
             Command command = parser.getCommand();
             finished = processCommand(command);
-            if (story.get(0).equals("Find Emma") && storyPrinted = false)
+            if (story.get(0).equals("Find Emma") && (storyPrinted == false))
             {
                 findEmma();
             }
-            else if (story.get(0).equals("Go to comms") && storyPrinted = false)
+            else if (story.get(0).equals("Go to comms") && (storyPrinted == false))
             {
                 goToComms();
             }
-            else if (story.get(0).equals("Find Davidson") && storyPrinted = false)
+            else if (story.get(0).equals("Find Davidson") && (storyPrinted == false))
             {
                 findDavidson();
             }
-            else if (story.get(0).equals("Find Melissa") && storyPrinted = false)
+            else if (story.get(0).equals("Find Melissa") && (storyPrinted == false))
             {
                 findMelissa();
             }
-            else if (story.get(0).equals("Fuses") && storyPrinted = false)
+            else if (story.get(0).equals("Fuses") && (storyPrinted == false))
             {
                 fuses();
             }
-            else if (story.get(0).equals("Fix Engine") && storyPrinted = false)
+            else if (story.get(0).equals("Fix Engine") && (storyPrinted == false))
             {
                 fixEngine();
             }
-            else if (story.get(0).equals("Bombs") && storyPrinted = false)
+            else if (story.get(0).equals("Bombs") && (storyPrinted == false))
             {
                 bombs();
             }
-            else if (story.get(0).equals("Build bomb") && storyPrinted = false)
+            else if (story.get(0).equals("Build bomb") && (storyPrinted == false))
             {
                 buildBomb();
             }
-            else if (story.get(0).equals("Escape") && storyPrinted = false)
+            else if (story.get(0).equals("Escape") && (storyPrinted == false))
             {
                 escape();
             }
-            else if (story.get(0).equals("Choose") && storyPrinted = false)
+            else if (story.get(0).equals("Choose") && (storyPrinted == false))
             {
                 choose();
             }
@@ -159,7 +157,7 @@ class Game
             for (String s: inv){
                 inventory += s+", ";
             }
-            inventory.substring(0,inventory.length-1);
+            inventory.substring(0,inventory.length()-1);
             inventory+=" >";
         }
         else if (commandWord.equals("//quit"))
@@ -281,7 +279,7 @@ class Game
     {
         storyPrinted = true;
         System.out.println("After you attach the bomb, you move to arm it. \nSuddenly, the whole ship seems to shake and rattle. \nYou spin around and come face-to-face with Commander Davidson--back from the dead.");
-        battle.battle(character.player,boss);
+        zorkArray.bossBattle();
         System.out.println("As you stand over Davidson's dead body, blue ooze leaking from his brain, the beeping of the bomb brings you back to reality.");
         System.out.println("'Paul?' Melissa's voice catches your attention. 'Paul, are you okay? You need to get out of here!'");
         System.out.println("'But... the bomb...' you try for words, but they don't come.");
@@ -302,7 +300,10 @@ class Game
         System.out.println("'Hurry,' Melissa urges, 'the bomb will go off very soon!'");
         System.out.println("You consider between the two. \nEmma, the captain of the ship, has been helpful since your arrival, providing you food and help from the beginning. \nMelissa, however, did help you start the power and arm the bomb. But that blue ooze matches the aliens perfectly.");
         System.out.println("After considering the options (and the possibility that either could be infected), you choose...");
-        String choice = command;
+        
+        //needs user input here
+        Scanner input = new Scanner(System.in);
+        String choice = input.nextLine();
         System.out.println(choice);
         System.out.println("Quickly, you grab her hand and pull her into the escape pod. \nThe door shuts behind you, leaving the space station behind as you blast into space.");
         System.out.println("You watch through the dusty window as Starship 15 A2 obliterates into nothing but rubble.");

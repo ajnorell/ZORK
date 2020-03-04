@@ -20,22 +20,21 @@
  *  commands that the parser returns.
  */
 import java.util.*;
-battle battle = new battle();
-String[] attacks = {"Galactic Punch", "Supersonic Scream", "Guard", "Punch"};
-enemy boss = new enemy(10, "Commander Davidson", 500, 13, 999, attacks);
+
 class Game 
 {
     //zorkArray.map[52][14] = 81;
     private Parser parser;
     public static int collectedFuses = 0;
     public static int collectedBombs = 0;
-    private ArrayList<String> inv = ArrayList<String>();
-    public static ArrayList<String> story = ArrayList<String>();
+    private static ArrayList<String> inv = ArrayList<String>(); //says '-> expected' in BlueJay??????????
+    public static ArrayList<String> story = ArrayList<String>(); //ditto!!!!!!
+    
+    // are these next three all private???
+    private static battle battle = new battle();
+    private static String[] attacks = {"Galactic Punch", "Supersonic Scream", "Guard", "Punch"};
+    private static enemy boss = new enemy(10, "Commander Davidson", 500, 13, 999, attacks);
         
-    //private static 
-    /**
-     * Create the game and initialize its internal map.
-     */
     public Game() 
     {
         parser = new Parser();
@@ -72,35 +71,35 @@ class Game
             {
                 findEmma();
             }
-            else if (story.get(0).equals("Go to comms" && storyPrinted = false)
+            else if (story.get(0).equals("Go to comms") && storyPrinted = false)
             {
                 goToComms();
             }
-            else if (story.get(0).equals("Find Davidson" && storyPrinted = false)
+            else if (story.get(0).equals("Find Davidson") && storyPrinted = false)
             {
                 findDavidson();
             }
-            else if (story.get(0).equals("Find Melissa" && storyPrinted = false)
+            else if (story.get(0).equals("Find Melissa") && storyPrinted = false)
             {
                 findMelissa();
             }
-            else if (story.get(0).equals("Fuses" && storyPrinted = false)
+            else if (story.get(0).equals("Fuses") && storyPrinted = false)
             {
                 fuses();
             }
-            else if (story.get(0).equals("Fix Engine" && storyPrinted = false)
+            else if (story.get(0).equals("Fix Engine") && storyPrinted = false)
             {
                 fixEngine();
             }
-            else if (story.get(0).equals("Bombs" && storyPrinted = false)
+            else if (story.get(0).equals("Bombs") && storyPrinted = false)
             {
                 bombs();
             }
-            else if (story.get(0).equals("Build bomb" && storyPrinted = false)
+            else if (story.get(0).equals("Build bomb") && storyPrinted = false)
             {
                 buildBomb();
             }
-            else if (story.get(0).equals("Escape" && storyPrinted = false)
+            else if (story.get(0).equals("Escape") && storyPrinted = false)
             {
                 escape();
             }
@@ -141,19 +140,19 @@ class Game
         String commandWord = command.getCommandWord();
         if (commandWord.equals("//help"))
             printHelp();
-        else if(commandWord.equals("w"){
+        else if(commandWord.equals("w")){
             zorkArray.move(0, 1);
         }
-        else if(commandWord.equals("a"){
+        else if(commandWord.equals("a")){
             zorkArray.move(-1, 0);
         }
-        else if(commandWord.equals("s"){
+        else if(commandWord.equals("s")){
             zorkArray.move(1, 0);
         }
-        else if(commandWord.equals("d"){
+        else if(commandWord.equals("d")){
             zorkArray.move(0, -1);
         }
-        else if(commandWord.equals("//stats"){
+        else if(commandWord.equals("//stats")){
             System.out.println("Health: "+character.hp);
             System.out.println("Sp: "+character.sp);
             String inventory = "Inventory: < ";
@@ -208,9 +207,7 @@ class Game
         System.out.println("'Here, take a granola bar. They're a new formula to boost your immune system. Good luck, Paul! See you around.'");
         inv.add("Granola Bar");
         System.out.println("[New Objective] Go to the Communications Room");
-        //           vvv this needs to be Emma's coordinates
-        zorkArray.map[][] = 0;
-        zorkArray.map[37][38] = 71
+        zorkArray.map[37][38] = 71;
     }
     private static void findDavidson() //called in zorkArray when map[][] = 2;
     {
@@ -253,7 +250,7 @@ class Game
         System.out.println("'Melissa said the door was blocked,' you reply.");
         System.out.println("'Hmm. Perhaps the ventilation system will do. \nMs. Melissa told me the easiest access to the vents is in the kitchen. Perhaps try there.'");
         System.out.println("[New Objective] Access the vents and install the fuses");
-        zorkArray.map[17][16] = 72
+        zorkArray.map[17][16] = 72;
     }
     private static void bombs() //called in zorkArray after 2 steps on 72 which should be at map[17][16]
     {
@@ -278,7 +275,7 @@ class Game
         System.out.println("'We're almost done here, Paul,' Professor Hidgens says. \n'All we have to do is attach the bomb to the back of the engine.'");
         System.out.println("'Right. Here we go,' you mutter.");
         System.out.println("[New Objective] Attach the bomb to the back of the engine");
-        zorkArray.map[1][16] = 73
+        zorkArray.map[1][16] = 73;
     }
     private static void escape() //called in zorkArray after 2 steps on 73 which should be at map[1][16]
     {
@@ -290,7 +287,7 @@ class Game
         System.out.println("'But... the bomb...' you try for words, but they don't come.");
         System.out.println("'It's okay. I'll arm it. Just go! We need at least one survivor.' \nMelissa turns you around and pushes you towards the exit. \nAs you leave, you catch a glimpse of blue ooze on Melissa's shoulder.");
         System.out.println("[New Objective] Get to the escape pod");
-        zorkArray.map[52][11] = 74
+        zorkArray.map[52][11] = 74;
     }
     private static void choose() //called in zorkArray after 2 steps on 74 which should be at map[52][11]
     {

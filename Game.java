@@ -27,7 +27,7 @@ class Game
     private Parser parser;
     public static int collectedFuses = 0;
     public static int collectedBombs = 0;
-    private static ArrayList<String> inv = ArrayList<String>(); //says '-> expected' in BlueJay??????????
+    public static ArrayList<String> inv = ArrayList<String>(); //says '-> expected' in BlueJay??????????
     public static ArrayList<String> story = ArrayList<String>(); //ditto!!!!!!
     
     // are these next three all private???

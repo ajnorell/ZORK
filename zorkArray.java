@@ -161,7 +161,11 @@ public class zorkArray
                 playerOn[1] = 4;
             }
             else if (map[pY+v][pX+h]==41){
-                System.out.println("You are standing on a vent");
+                System.out.println("You are standing on a vent. \nYou crawl through to the other side, braving your way through cobwebs, bugs, and weird blue ooze.");
+                if (pY+v=27 && pX+h=5)
+                    v+=10;
+                else
+                    v-=10;
                 playerOn[1]=41;
             }
             else if (map[pY+v][pX+h]==42){

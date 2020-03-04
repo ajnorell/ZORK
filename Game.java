@@ -23,12 +23,13 @@ import java.util.*;
 
 class Game 
 {
-    //zorkArray.map[52][14] = 81;
+    //zorkArray.map[52][14] = 81;    why is this commented?
     private Parser parser;
     public static int collectedFuses = 0;
     public static int collectedBombs = 0;
     public static ArrayList<String> inv = ArrayList<String>(); //says '-> expected' in BlueJay??????????
     public static ArrayList<String> story = ArrayList<String>(); //ditto!!!!!!
+    //https://www.javatpoint.com/java-lambda-expressions
     
     // are these next three all private???
     private static battle battle = new battle();

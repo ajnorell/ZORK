@@ -124,11 +124,20 @@ public class zorkArray
          else if (map[pY+v][pX+h]==39)
              System.out.println("A bed blocks your path");
          else if (map[pY+v][pX+h]==61)
+         {
+             map[pY+v][pX+h]=0;
              Game.nextStory();
+         }
          else if (map[pY+v][pX+h]==62)
+         {
+             map[pY+v][pX+h]=0;
              Game.nextStory();
+         }
          else if (map[pY+v][pX+h]==63)
+         {
+             map[pY+v][pX+h]=0;
              Game.nextStory();
+         }
          else if (map[pY+v][pX+h]==64)
          {
              System.out.println("You find a 'kinda hot' man in a labcoat.");
@@ -140,6 +149,7 @@ public class zorkArray
              Game.collectedFuses += 1;
              System.out.println("'I don't even know your name,' you say.");
              System.out.println("'Right, right. I'm Professor Hidgens. Now, off we go.'");
+             map[pY+v][pX+h]=0;
          }
          else if (map[pY+v][pX+h]==71)
              System.out.println("Unfortunately for you, this door does not actually exist.");

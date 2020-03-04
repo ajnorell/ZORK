@@ -1,13 +1,15 @@
 
 public class zorkArray
 {
-    battle battle = new battle();    
-    String[] attacks1 = {"Punch","Guard", "Scream", "Slash"};
-    String[] attacks2 = {"Punch","Guard", "Scream"};
-    enemy enemy1 = new enemy(3, "Alien", 20, 4, 10, attacks1);
-    enemy enemy2 = new enemy(5, "Buff Alien", 40, 1, 10, attacks1);
-    enemy enemy3 = new enemy(1, "Vocal Alien", 30, 7, 10, attacks2);
-    character player = new character("Paul");
+    Battle battle = new Battle();    
+    private static String[] attacks1 = {"Punch","Guard", "Scream", "Slash"};
+    private static String[] attacks2 = {"Punch","Guard", "Scream"};
+    private static enemy enemy1 = new enemy(3, "Alien", 20, 4, 10, attacks1);
+    private static enemy enemy2 = new enemy(5, "Buff Alien", 40, 1, 10, attacks1);
+    private static enemy enemy3 = new enemy(1, "Vocal Alien", 30, 7, 10, attacks2);
+    private static String[] bossAttacks = {"Galactic Punch", "Supersonic Scream", "Guard", "Punch"};
+    private static enemy boss = new enemy(10, "Commander Davidson", 500, 13, 999, bossAttacks);
+    private static character player = new character("Paul");
     //changed enemy count to enemyCount
     private static int enemyCount = 1;
     /* 
@@ -99,8 +101,10 @@ public class zorkArray
          //d
          move(0,1);
      }*/
-     
-    
+
+     public static void bossBattle(){
+         Battle.battle(player,boss);
+        }
      public static void move(int v, int h){
          if (map[pY+v][pX+h]==1)
              System.out.println("You have run into a wall");
@@ -162,7 +166,7 @@ public class zorkArray
             }
             else if (map[pY+v][pX+h]==41){
                 System.out.println("You are standing on a vent. \nYou crawl through to the other side, braving your way through cobwebs, bugs, and weird blue ooze.");
-                if (pY+v=27 && pX+h=5)
+                if ((pY+v==27) && (pX+h==5))
                     v+=10;
                 else
                     v-=10;
@@ -222,11 +226,11 @@ public class zorkArray
                 System.out.println("You encounter an alien leaking blue ooze. It attacks you without hesitation.");
                 //start combat
                 if(enemyCount == 1)
-                    battle.battle(player, enemy1);
+                    Battle.battle(player, enemy1);
                 else if(enemyCount == 2)
-                    battle.battle(player, enemy2);
+                    Battle.battle(player, enemy2);
                 else if(enemyCount == 3){
-                    battle.battle(player, enemy3);
+                    Battle.battle(player, enemy3);
                     enemyCount = 0;
                 }
                 else

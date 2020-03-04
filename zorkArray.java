@@ -275,12 +275,11 @@ public class zorkArray
             else{
                 System.out.println("You take a step");
                 playerOn[1]=0;
-             
-             map[pY][pX]=playerOn[0];
-             playerOn[0]=playerOn[1];
-             pY+=v;
-             pX+=h;
-             map[pY][pX]=2;
+                map[pY][pX]=playerOn[0];
+                playerOn[0]=playerOn[1];
+                pY+=v;
+                pX+=h;
+                map[pY][pX]=2;
          }
      }
 }

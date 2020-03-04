@@ -4,6 +4,7 @@ public class zorkArray
     Battle battle = new Battle();    
     private static String[] attacks1 = {"Punch","Guard", "Scream", "Slash"};
     private static String[] attacks2 = {"Punch","Guard", "Scream"};
+    boolean win;
     private static enemy enemy1 = new enemy(3, "Alien", 20, 4, 10, attacks1);
     private static enemy enemy2 = new enemy(5, "Buff Alien", 40, 1, 10, attacks1);
     private static enemy enemy3 = new enemy(1, "Vocal Alien", 30, 7, 10, attacks2);
@@ -240,15 +241,20 @@ public class zorkArray
                 System.out.println("You encounter an alien leaking blue ooze. It attacks you without hesitation.");
                 //start combat
                 if(enemyCount == 1)
-                    Battle.battle(player, enemy1);
+                    win = Battle.battle(player, enemy1);
                 else if(enemyCount == 2)
-                    Battle.battle(player, enemy2);
+                    win = Battle.battle(player, enemy2);
                 else if(enemyCount == 3){
-                    Battle.battle(player, enemy3);
+                     win = Battle.battle(player, enemy3);
                     enemyCount = 0;
                 }
-                else
+                else{
                     System.out.println("An error has occured");
+                    win = false;
+                }
+                if(win == false){
+                    Game.finished = false;
+                }
                 enemyCount++;
                 playerOn[1]=0;
             }
@@ -275,13 +281,13 @@ public class zorkArray
             else{
                 System.out.println("You take a step");
                 playerOn[1]=0;
-            }
+             
              map[pY][pX]=playerOn[0];
              playerOn[0]=playerOn[1];
              pY+=v;
              pX+=h;
              map[pY][pX]=2;
-         
+         }
      }
 }
 }

@@ -4,7 +4,7 @@ public class zorkArray
     Battle battle = new Battle();    
     private static String[] attacks1 = {"Punch","Guard", "Scream", "Slash"};
     private static String[] attacks2 = {"Punch","Guard", "Scream"};
-    boolean win;
+    boolean static win;
     private static enemy enemy1 = new enemy(3, "Alien", 20, 4, 10, attacks1);
     private static enemy enemy2 = new enemy(5, "Buff Alien", 40, 1, 10, attacks1);
     private static enemy enemy3 = new enemy(1, "Vocal Alien", 30, 7, 10, attacks2);

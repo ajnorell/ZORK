@@ -109,52 +109,55 @@ public class zorkArray
      public static void move(int v, int h){
          if (map[pY+v][pX+h]==1){
              v=0; h=0;
-             System.out.println("You have run into a wall");}
+             System.out.println("You have run into a wall"); playerOn[1]=0;}
          else if (map[pY+v][pX+h]==31){
              v=0; h=0;
-             System.out.println("A chair blocks your path");}
+             System.out.println("A chair blocks your path"); playerOn[1]=0;}
          else if (map[pY+v][pX+h]==32){
              v=0; h=0;
-             System.out.println("A table blocks your path");}
+             System.out.println("A table blocks your path"); playerOn[1]=0;}
          else if (map[pY+v][pX+h]==33){
              v=0; h=0;
-             System.out.println("A box blocks your path");}
+             System.out.println("A box blocks your path"); playerOn[1]=0;}
          else if (map[pY+v][pX+h]==34){
              v=0; h=0;
-             System.out.println("You look out of a window. Outside, you see the vast emptiness of space. It's beautiful. And, yet, it's terrifying.");}
+             System.out.println("You look out of a window. Outside, you see the vast emptiness of space. It's beautiful. And, yet, it's terrifying."); playerOn[1]=0;}
          else if (map[pY+v][pX+h]==35){
              v=0; h=0;
-             System.out.println("The ship's engine blocks your path");}
+             System.out.println("The ship's engine blocks your path"); playerOn[1]=0;}
          else if (map[pY+v][pX+h]==36){
              v=0; h=0;
-             System.out.println("An unscalable boulder blocks your path");}
+             System.out.println("An unscalable boulder blocks your path"); playerOn[1]=0;}
          else if (map[pY+v][pX+h]==37){
              v=0; h=0;
-             System.out.println("A kitchen stove blocks your path");}
+             System.out.println("A kitchen stove blocks your path"); playerOn[1]=0;}
          else if (map[pY+v][pX+h]==38){
              v=0; h=0;
-             System.out.println("A toilet blocks your path. As you look at it, you can't help but wonder where the waste goes.");}
+             System.out.println("A toilet blocks your path. As you look at it, you can't help but wonder where the waste goes."); playerOn[1]=0;}
              //make a scanner gain input. If the player says "open" give them the cheat code: 5s26W$$nC*hpa,E
          else if (map[pY+v][pX+h]==39){
              v=0; h=0;
-             System.out.println("A bed blocks your path");}
+             System.out.println("A bed blocks your path"); playerOn[1]=0;}
          else if (map[pY+v][pX+h]==61)
          {
              v=0; h=0;
              map[pY+v][pX+h]=0;
              Game.nextStory();
+             playerOn[1]=0;
          }
          else if (map[pY+v][pX+h]==62)
          {
              v=0; h=0;
              map[pY+v][pX+h]=0;
              Game.nextStory();
+             playerOn[1]=0;
          }
          else if (map[pY+v][pX+h]==63)
          {
              v=0; h=0;
              map[pY+v][pX+h]=0;
              Game.nextStory();
+             playerOn[1]=0;
          }
          else if (map[pY+v][pX+h]==64)
          {
@@ -169,6 +172,7 @@ public class zorkArray
              System.out.println("'I don't even know your name,' you say.");
              System.out.println("'Right, right. I'm Professor Hidgens. Now, off we go.'");
              map[pY+v][pX+h]=0;
+             playerOn[1]=0;
          }
          else if (map[pY+v][pX+h]==71)
              System.out.println("Unfortunately for you, this door does not actually exist.");

@@ -5,10 +5,11 @@ public class zorkArray
     String[] attacks1 = {"Punch","Guard", "Scream", "Slash"};
     String[] attacks2 = {"Punch","Guard", "Scream"};
     enemy enemy1 = new enemy(3, "Alien", 20, 4, 10, attacks1);
-    enemy enemy2 = new enemy(5, "Buff Alien", 40, 1, 10, attacks1};
-    enemy enemy3 = new enemy(1, "Vocal Alien", 30, 7, 10, attacks2};
+    enemy enemy2 = new enemy(5, "Buff Alien", 40, 1, 10, attacks1);
+    enemy enemy3 = new enemy(1, "Vocal Alien", 30, 7, 10, attacks2);
     character player = new character("Paul");
-    int enemy count = 1;
+    //changed enemy count to enemyCount
+    private static int enemyCount = 1;
     /* 
 
        Pick-ups:
@@ -206,18 +207,17 @@ public class zorkArray
             else if (map[pY+v][pX+h]==8){
                 System.out.println("You encounter an alien leaking blue ooze. It attacks you without hesitation.");
                 //start combat
-                if(count == 1){
+                if(enemyCount == 1)
                     battle.battle(player, enemy1);
-                }
-                else if(count == 2){
+                else if(enemyCount == 2)
                     battle.battle(player, enemy2);
-                }
-                else if(count == 3){
+                else if(enemyCount == 3){
                     battle.battle(player, enemy3);
-                    count = 0;
-                else{
+                    enemyCount = 0;
+                }
+                else
                     System.out.println("An error has occured");
-                count ++;
+                enemyCount++;
                 playerOn[1]=0;
             }
             else if (map[pY+v][pX+h]==71)
@@ -251,4 +251,5 @@ public class zorkArray
              map[pY][pX]=2;
          }
      }
+}
 }

@@ -6,7 +6,7 @@
  * @version (a version number or a date)
  */
 import java.util.*;
-public class battle{
+public class Battle{
 public static void battle(character c, enemy e){
         Scanner s = new Scanner(System.in);
         int turn = 1;

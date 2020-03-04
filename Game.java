@@ -138,16 +138,16 @@ class Game
         if (commandWord.equals("//help"))
             printHelp();
         else if(commandWord.equals("w")){
-            zorkArray.move(1, 0);
+            zorkArray.move(-1, 0);
         }
         else if(commandWord.equals("a")){
             zorkArray.move(0, -1);
         }
         else if(commandWord.equals("s")){
-            zorkArray.move(0, 1);
+            zorkArray.move(1, 0);
         }
         else if(commandWord.equals("d")){
-            zorkArray.move(-1, 0);
+            zorkArray.move(0, 1);
         }
         else if(commandWord.equals("//stats")){
             System.out.println("Health: "+character.hp);

@@ -6,7 +6,7 @@
  */
 import java.util.*;
 public class Battle{
-public static void battle(character c, enemy e){
+public static boolean battle(character c, enemy e){
         Scanner s = new Scanner(System.in);
         int turn = 1;
         int damage;
@@ -104,16 +104,19 @@ public static void battle(character c, enemy e){
         }
         if(c.tempHp <= 0){
             System.out.println("Game Over");
+            return false;
         }
         else if(e.tempHp <= 0){
             System.out.println("You won!");
             c.exp(e.getExp());
-            e.tempHp = e.getHp();
+            e.tempHp = e.getHp();            
         }
         else{
             System.out.println("An error has occured");
+            return false;
         }
         c.tempHp = c.getHp();
-        c.tempSp = c.getSp();       
+        c.tempSp = c.getSp();  
+        return true;     
     }    
 }

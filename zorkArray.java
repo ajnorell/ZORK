@@ -206,10 +206,11 @@ public class zorkArray
                 System.out.println("You find an old game console. Enter the cheat code: ");
                 Scanner scan = new Scanner(System.in);
                 if(scan.nextLine().equals("5s26W$$nC*hpa,E")){
-                map[52][53] = 72;
+                map[52][53] = 10;
                 }
                 scan.close();
-                playerOn[1]=42;
+                h=0; v=0;
+                playerOn[1]=0;
             }
             else if (map[pY+v][pX+h]==51){
                 System.out.println("You find a fuse");

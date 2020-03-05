@@ -1,4 +1,4 @@
-
+import java.util.*
 public class zorkArray
 {
     Battle battle = new Battle();    
@@ -13,6 +13,7 @@ public class zorkArray
     private static character player = new character("Paul");
     //changed enemy count to enemyCount
     private static int enemyCount = 1;
+    Scanner scan = new Scanner(System.in);
     /* 
 
        Pick-ups:

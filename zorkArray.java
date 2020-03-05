@@ -70,7 +70,7 @@ public class zorkArray
                             {1,0,0,1,0,0,0,0,0,51,33,33,52,33,33,0,0,0,0,33,33,33,1,0,0,0,0,0,0,32,52,0,33,32,0,0,0,0,0,0,4,0,0,0,0,0,1},
                             {1,0,0,1,1,1,1,4,1,1,1,1,1,1,1,1,1,1,4,1,1,1,1,0,0,0,0,0,0,31,32,32,32,31,8,0,32,32,0,0,1,0,0,0,39,39,1},
                             {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,8,0,0,0,0,31,0,0,0,0,32,32,0,0,1,0,0,0,0,51,1},
-                            {1,51,0,0,0,0,0,0,0,8,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,32,32,0,53,1,39,39,53,0,0,1},
+                            {1,51,0,0,0,0,0,0,0,8,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,75,0,0,0,0,0,32,32,0,53,1,39,39,53,0,0,1},
                             {1,33,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,4,1,1,1,34,34,34,1,1},
                             {1,0,0,1,41,0,0,0,0,8,0,0,0,0,0,0,0,32,32,32,32,0,1,0,0,0,0,0,0,0,0,0,0,0,52,1,0,0,0,0,1,1,1,1,1,1,1},
                             {1,0,8,1,32,32,53,37,1,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,32,32,53,0,0,0,0,0,0,42,1,0,31,32,0,34,1,1,1,1,1,1},
@@ -181,15 +181,22 @@ public class zorkArray
          else{
             if (map[pY+v][pX+h]==4){
                 System.out.println("You enter the threshold to a new room");
-                playerOn[1] = 4;
+                v*=2; pY+=v; v=0;
+                h*=2; pX+=h; h=0;
+                playerOn[1] = 0;
             }
             else if (map[pY+v][pX+h]==41){
                 System.out.println("You are standing on a vent. \nYou crawl through to the other side, braving your way through cobwebs, bugs, and weird blue ooze.");
-                if ((pY+v==27) && (pX+h==5))
-                    v+=10;
+                if (pY+v==27)
+                {
+                    pY=37; pX=5; map[pY][pX]=2;
+                }
                 else
-                    v-=10;
-                playerOn[1]=41;
+                {
+                    pY=27; pX=5; map[pY][pX]=2;
+                }
+                v=0; h=0;
+                playerOn[1]=0;
             }
             else if (map[pY+v][pX+h]==42){
                 System.out.println("You find an old game console. Enter the cheat code to win: ");
@@ -260,6 +267,8 @@ public class zorkArray
                     Game.finished = false;
                 }
                 enemyCount++;
+                pY+=v; v=0;
+                pX+=h; h=0;
                 playerOn[1]=0;
             }
             else if (map[pY+v][pX+h]==71)
@@ -278,6 +287,11 @@ public class zorkArray
                 playerOn[1]=0;
             }
             else if (map[pY+v][pX+h]==74)
+            {
+                Game.nextStory();
+                playerOn[1]=0;
+            }
+            else if (map[pY+v][pX+h]==75)
             {
                 Game.nextStory();
                 playerOn[1]=0;

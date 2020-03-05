@@ -158,7 +158,7 @@ class Game
         else if(commandWord.equals("d")){
             zorkArray.move(0, 1);
         }
-        else if(commandWord.equals("open"){
+        else if(commandWord.equals("open")){
             if((zorkArray.map[48][37] == 2) || (zorkArray.map[48][39] == 2))
                 System.out.println("5s26W$$nC*hpa,E");
             else

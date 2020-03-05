@@ -206,6 +206,7 @@ public class zorkArray
             else if (map[pY+v][pX+h]==51){
                 System.out.println("You find a fuse");
                 Game.collectedFuses+=1;
+                map[pY+v][pX+h]=0;
                 playerOn[1]=0;
             }
             else if (map[pY+v][pX+h]==52){
@@ -299,6 +300,14 @@ public class zorkArray
             else{
                 System.out.println("You take a step");
                 playerOn[1]=0;
+            if (Game.collectedFuses==7){
+                Game.nextStory();
+                Game.collectedFuses = 10;
+            }
+            if (Game.collectedBombs==10){
+                Game.nextStory();
+                Game.collectedBombs = 15;
+            }
              
              map[pY][pX]=playerOn[0];
              playerOn[0]=playerOn[1];

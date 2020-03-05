@@ -174,10 +174,13 @@ public class zorkArray
              v=0; h=0;
              playerOn[1]=0;
          }
-         else if (map[pY+v][pX+h]==71)
+         else if (map[pY+v][pX+h]==71){
              System.out.println("Unfortunately for you, this door does not actually exist.");
-         //implement all the 7's we have to step on
-
+            }
+         else  if (map[pY+v][Px+h] == 72){
+             System.out.println("You walk out of this door, being sucked into space.");
+             System.out.println("Experiencing explosive decompression is not very fun.")
+         }
          else{
             if (map[pY+v][pX+h]==4){
                 System.out.println("You enter the threshold to a new room");
@@ -199,9 +202,9 @@ public class zorkArray
                 playerOn[1]=0;
             }
             else if (map[pY+v][pX+h]==42){
-                System.out.println("You find an old game console. Enter the cheat code to win: ");
+                System.out.println("You find an old game console. Enter the cheat code: ");
                 if(scan.nextLine().equals("5s26W$$nC*hpa,E")){
-                Game.finished = True;
+                map[52][53] = 72;
                 }
                 playerOn[1]=42;
             }

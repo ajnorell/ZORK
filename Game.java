@@ -220,7 +220,7 @@ class Game
     private static void findDavidson() //called in zorkArray when 2 steps on 9;
     {
         storyPrinted = true;
-        System.out.println("As you enter the empty Comms Room, you look around at the tables lined with monitors. All of them blink red.");
+        System.out.println("As you pass through the empty Control Room, you look around at the tables lined with monitors. All of them blink red.");
         System.out.println("You lean over to look at the monitors. A large, blinking dot moves closer to the outline of the ship.");
         System.out.println("As the dot collides with the ship, you hear a large crash. \nThe ship jerks around violently, throwing you to the ground. \nThen, everything goes dark.");
         System.out.println("Okay, don't panic. First things first. Find the Commander.");

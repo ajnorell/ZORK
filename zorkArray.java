@@ -13,7 +13,7 @@ public class zorkArray
     private static character player = new character("Paul");
     //changed enemy count to enemyCount
     private static int enemyCount = 1;
-    Scanner scan = new Scanner(System.in);
+    
     /* 
 
        Pick-ups:
@@ -204,9 +204,11 @@ public class zorkArray
             }
             else if (map[pY+v][pX+h]==42){
                 System.out.println("You find an old game console. Enter the cheat code: ");
+                Scanner scan = new Scanner(System.in);
                 if(scan.nextLine().equals("5s26W$$nC*hpa,E")){
                 map[52][53] = 72;
                 }
+                scan.close();
                 playerOn[1]=42;
             }
             else if (map[pY+v][pX+h]==51){

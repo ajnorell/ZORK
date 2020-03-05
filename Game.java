@@ -247,11 +247,6 @@ class Game
         System.out.println("Melissa smiles awkwardly. 'Don't panic, but be cautious. Think of it as a game,' she jokes. \n'It could be fun!'");
         System.out.println("[New Objective] Find 7 fuses");
         story.remove(0);
-        while (collectedFuses != 7)
-        {
-            storyPrinted = true;
-        }
-        nextStory();
     }
     private static void fixEngine() //called here after player finds all fuses
     {
@@ -275,11 +270,6 @@ class Game
         System.out.println("'Right, then. Let's find the rest.'");
         System.out.println("[New Objective] Find the rest of the bomb components");
         story.remove(0);
-        while (collectedBombs != 10)
-        {
-            storyPrinted = true;
-        }
-        nextStory();
     }
     private static void buildBomb() //called here after player collects all bomb components
     {

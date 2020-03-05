@@ -198,12 +198,12 @@ public class zorkArray
             }
             else if (map[pY+v][pX+h]==51){
                 System.out.println("You find a fuse");
-                //add fuse to inventory
+                Game.collectedFuses+=1;
                 playerOn[1]=0;
             }
             else if (map[pY+v][pX+h]==52){
                 System.out.println("You find a bomb component");
-                //add bomb component to inventory
+                Game.collectedBombs+=1;
                 playerOn[1]=0;
             }
             else if (map[pY+v][pX+h]==53){

@@ -200,7 +200,9 @@ public class zorkArray
             }
             else if (map[pY+v][pX+h]==42){
                 System.out.println("You find an old game console. Enter the cheat code to win: ");
-                //add a scanner to check for the cheat code
+                if(scan.nextLine().equals("5s26W$$nC*hpa,E")){
+                Game.finished = True;
+                }
                 playerOn[1]=42;
             }
             else if (map[pY+v][pX+h]==51){

@@ -1,4 +1,4 @@
-import java.util.*
+import java.util.*;
 public class zorkArray
 {
     Battle battle = new Battle();    
@@ -178,9 +178,9 @@ public class zorkArray
          else if (map[pY+v][pX+h]==71){
              System.out.println("Unfortunately for you, this door does not actually exist.");
             }
-         else  if (map[pY+v][Px+h] == 72){
+         else  if (map[pY+v][pX+h] == 72){
              System.out.println("You walk out of this door, being sucked into space.");
-             System.out.println("Experiencing explosive decompression is not very fun.")
+             System.out.println("Experiencing explosive decompression is not very fun.");
          }
          else{
             if (map[pY+v][pX+h]==4){

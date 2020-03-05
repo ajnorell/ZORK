@@ -140,28 +140,27 @@ public class zorkArray
              System.out.println("A bed blocks your path"); playerOn[1]=0;}
          else if (map[pY+v][pX+h]==61)
          {
-             v=0; h=0;
              map[pY+v][pX+h]=0;
+             v=0; h=0;
              Game.nextStory();
              playerOn[1]=0;
          }
          else if (map[pY+v][pX+h]==62)
          {
-             v=0; h=0;
              map[pY+v][pX+h]=0;
+             v=0; h=0;
              Game.nextStory();
              playerOn[1]=0;
          }
          else if (map[pY+v][pX+h]==63)
          {
-             v=0; h=0;
              map[pY+v][pX+h]=0;
+             v=0; h=0;
              Game.nextStory();
              playerOn[1]=0;
          }
          else if (map[pY+v][pX+h]==64)
          {
-             v=0; h=0;
              System.out.println("You find a 'kinda hot' man in a labcoat.");
              System.out.println("'Good God! You must be Paul. Emma told us to expect you today,' the man says.");
              System.out.println("'It's very unfortunate you came today, since it is the day of the invasion.'");
@@ -172,6 +171,7 @@ public class zorkArray
              System.out.println("'I don't even know your name,' you say.");
              System.out.println("'Right, right. I'm Professor Hidgens. Now, off we go.'");
              map[pY+v][pX+h]=0;
+             v=0; h=0;
              playerOn[1]=0;
          }
          else if (map[pY+v][pX+h]==71)

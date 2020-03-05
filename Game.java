@@ -159,10 +159,10 @@ class Game
             zorkArray.move(0, 1);
         }
         else if(commandWord.equals("open"){
-            if((map[48][37] == 2) || (map[48][39] == 2))
+            if((zorkArray.map[48][37] == 2) || (zorkArray.map[48][39] == 2))
                 System.out.println("5s26W$$nC*hpa,E");
             else
-                System.out.println('That is not a command I recognize.");
+                System.out.println("That is not a command I recognize.");
         }
         else if(commandWord.equals("stats")){
             System.out.println("Health: "+character.hp);

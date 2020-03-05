@@ -178,7 +178,7 @@ public class zorkArray
          else if (map[pY+v][pX+h]==71){
              System.out.println("Unfortunately for you, this door does not actually exist.");
             }
-         else  if (map[pY+v][pX+h] == 72){
+         else  if (map[pY+v][pX+h] == 10){
              System.out.println("You walk out of this door, being sucked into space.");
              System.out.println("Experiencing explosive decompression is not very fun.");
          }
@@ -282,26 +282,31 @@ public class zorkArray
             }
             else if (map[pY+v][pX+h]==71)
             {
+                map[pY+v][pX+h]=0;
                 Game.nextStory();
                 playerOn[1]=0;
             }
             else if (map[pY+v][pX+h]==72)
             {
+                map[pY+v][pX+h]=0;
                 Game.nextStory();
                 playerOn[1]=0;
             }
             else if (map[pY+v][pX+h]==73)
             {
+                map[pY+v][pX+h]=0;
                 Game.nextStory();
                 playerOn[1]=0;
             }
             else if (map[pY+v][pX+h]==74)
             {
+                map[pY+v][pX+h]=0;
                 Game.nextStory();
                 playerOn[1]=0;
             }
             else if (map[pY+v][pX+h]==75)
             {
+                map[pY+v][pX+h]=0;
                 Game.nextStory();
                 playerOn[1]=0;
             }

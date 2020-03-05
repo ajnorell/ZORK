@@ -32,6 +32,7 @@ class Game
     public static boolean storyPrinted = false;
     private static Battle battle = new Battle();
     public static boolean finished = false;
+    public static boolean win = false;
   
         
     public Game() 
@@ -114,7 +115,10 @@ class Game
                 choose();
             }
         }
-        System.out.println("System exited. Game Over.");
+        if (win)
+            win();
+        else
+            lose();
     }
 
     /**
@@ -128,6 +132,16 @@ class Game
         System.out.println("When you're ready, use W,A,S,D to move about the ship.");
         System.out.println("Type 'help' if you need help.");
         System.out.println();
+    }
+    
+    private void win()
+    {
+        System.out.println("The End");
+    }
+    
+    private void lose()
+    {
+        System.out.println("System exited. Game Over.");
     }
 
     /**

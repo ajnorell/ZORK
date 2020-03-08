@@ -185,8 +185,8 @@ class Game
             for (String s: inv){
                 inventory = inventory+s+", ";
             }
-            inventory.substring(0,inventory.length()-2);
-            inventory+=" >";
+            inventory = inventory.substring(0,inventory.length()-2);
+            inventory=inventory+" >";
             System.out.println(inventory);
             System.out.println("Collected Fuses: "+collectedFuses);
             System.out.println("Collected Bomb Components: "+collectedBombs);

@@ -47,7 +47,7 @@ class Game
     {   
         inv.add("Knife");
         story.add("Find Emma");
-        story.add("wait");
+        story.add("wait1");
         story.add("Go to comms");
         story.add("wait");
         story.add("Find Davidson");
@@ -202,6 +202,17 @@ class Game
         {
             printHelp();
         }
+        else if (commandWord.equals("id"))
+        {
+            for(int i=0;i<53;i++)
+            {
+                for(int j=0;i<46;i++)
+                {
+                    System.out.print(zorkArray.map[i][j]);
+                }
+                System.out.print("\n");
+            }
+        }
         return false;
     }
 
@@ -247,6 +258,7 @@ class Game
         System.out.println("As the dot collides with the ship, you hear a large crash. \nThe ship jerks around violently, throwing you to the ground. \nThen, everything goes dark.");
         System.out.println("Okay, don't panic. First things first. Find the Commander.");
         System.out.println("[New Objective] Find Commmander Davidson");
+        setAliens();
         story.remove(0);
     }
     private static void findMelissa() //called in zorkArray when 2 steps on 62
@@ -341,5 +353,21 @@ class Game
     {
         story.remove(0);
         storyPrinted = false;
+    }
+    
+    public static void setAliens()
+    {
+        for (int i=0; i<40; i++)
+        {
+            int y = (int)(Math.random()*53+1);
+            int x = (int)(Math.random()*46+1);
+            {
+                y = (int)(Math.random()*53+1);
+                x = (int)(Math.random()*46+1);
+            }
+            zorkArray.map[y][x] = 8;
+        }
+        zorkArray.map[53][14] = 8;
+        zorkArray.map[30][33] = 8;
     }
 }

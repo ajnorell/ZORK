@@ -47,9 +47,18 @@ public static boolean battle(character c, enemy e){
                     correct = true;
                 }
                 else if (input.equals("flamethrower") && c.flamethrower == true){
-                    damage = c.flamethrower();
-                    e.takeDamage(damage);
-                    correct = true;
+                    if (Game.story.size()<=8)
+                    {
+                        damage = c.flamethrower();
+                        e.takeDamage(damage);
+                        correct = true;
+                    }
+                    else
+                    {
+                        System.out.println("Without the engine on, the flames fly out of control and back towards you.");
+                        c.takeDamage(c.flamethrower());
+                        correct = true;
+                    }
                 }
                 else if (input.equals("plasma grenade") && c.plasmaGrenade == true){
                     damage = c.plasmaGrenade();

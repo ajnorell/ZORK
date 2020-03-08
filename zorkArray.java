@@ -1,4 +1,4 @@
-import java.util.*;
+
 public class zorkArray
 {
     Battle battle = new Battle();    
@@ -13,7 +13,6 @@ public class zorkArray
     private static character player = new character("Paul");
     //changed enemy count to enemyCount
     private static int enemyCount = 1;
-    
     /* 
 
        Pick-ups:
@@ -175,13 +174,10 @@ public class zorkArray
              v=0; h=0;
              playerOn[1]=0;
          }
-         else if (map[pY+v][pX+h]==71){
+         else if (map[pY+v][pX+h]==71)
              System.out.println("Unfortunately for you, this door does not actually exist.");
-            }
-         else  if (map[pY+v][pX+h] == 10){
-             System.out.println("You walk out of this door, being sucked into space.");
-             System.out.println("Experiencing explosive decompression is not very fun.");
-         }
+         //implement all the 7's we have to step on
+
          else{
             if (map[pY+v][pX+h]==4){
                 System.out.println("You enter the threshold to a new room");
@@ -203,14 +199,9 @@ public class zorkArray
                 playerOn[1]=0;
             }
             else if (map[pY+v][pX+h]==42){
-                System.out.println("You find an old game console. Enter the cheat code: ");
-                Scanner scan = new Scanner(System.in);
-                if(scan.nextLine().equals("5s26W$$nC*hpa,E")){
-                map[52][53] = 10;
-                }
-                scan.close();
-                h=0; v=0;
-                playerOn[1]=0;
+                System.out.println("You find an old game console. Enter the cheat code to win: ");
+                //add a scanner to check for the cheat code
+                playerOn[1]=42;
             }
             else if (map[pY+v][pX+h]==51){
                 System.out.println("You find a fuse");
@@ -221,60 +212,65 @@ public class zorkArray
             else if (map[pY+v][pX+h]==52){
                 System.out.println("You find a bomb component");
                 Game.collectedBombs+=1;
+                map[pY+v][pX+h]=0;
                 playerOn[1]=0;
             }
             else if (map[pY+v][pX+h]==53){
                 System.out.println("You find a granola bar. This can increase your health when eaten.");
                 player.firstAid = true;
                 player.Skills();
-                //add granola bar to inventory
+                Game.inv.add("Granola Bar");
+                map[pY+v][pX+h]=0;
                 playerOn[1]=0;
             }
             else if (map[pY+v][pX+h]==54){
                 System.out.println("You find a plasma gun. You pick it up and examine it. It's in working order.");
                 player.plasmaGun = true;
                 player.Skills();
-                //add plasma gun to inventory
+                Game.inv.add("Plasma Gun");
+                map[pY+v][pX+h]=0;
                 playerOn[1]=0;
             }
             else if (map[pY+v][pX+h]==55){
                 System.out.println("You find a handful of working plasma grenades. You pocket them for later use.");
                 player.plasmaGrenade = true;
                 player.Skills();
-                //add plasma grenades to inventory
+                Game.inv.add("Plasma Grenades");
+                map[pY+v][pX+h]=0;
                 playerOn[1]=0;
             }
             else if (map[pY+v][pX+h]==56){
                 System.out.println("You find a crude flamethrower. Incredibly dangerous if the engine isn't working.");
                 player.flamethrower = true;
                 player.Skills();
-                //add flamethrower to inventory
+                Game.inv.add("Flamethrower");
+                map[pY+v][pX+h]=0;
                 playerOn[1]=0;
             }
             else if (map[pY+v][pX+h]==57){
                 System.out.println("You find an old sonar gun. It's tuned so high, it could probably make someone deaf.");
                 player.sonarGun = true;
                 player.Skills();
-                //add sonar gun to inventory
+                Game.inv.add("Sonar Gun");
+                map[pY+v][pX+h]=0;
                 playerOn[1]=0;
             }
             else if (map[pY+v][pX+h]==8){
                 System.out.println("You encounter an alien leaking blue ooze. It attacks you without hesitation.");
-                //start combat
                 if(enemyCount == 1)
                     win = Battle.battle(player, enemy1);
                 else if(enemyCount == 2)
                     win = Battle.battle(player, enemy2);
                 else if(enemyCount == 3){
                      win = Battle.battle(player, enemy3);
-                    enemyCount = 0;
+                    enemyCount = 1;
                 }
                 else{
                     System.out.println("An error has occured");
                     win = false;
                 }
                 if(win == false){
-                    Game.finished = false;
+                    Game.finished = true;
                 }
                 enemyCount++;
                 pY+=v; v=0;
@@ -314,13 +310,13 @@ public class zorkArray
             else{
                 System.out.println("You take a step");
                 playerOn[1]=0;
-            if (Game.collectedFuses==7){
+            if (Game.collectedFuses>=7){
                 Game.nextStory();
-                Game.collectedFuses = 10;
+                Game.collectedFuses = -10;
             }
-            if (Game.collectedBombs==10){
+            if (Game.collectedBombs>=10){
                 Game.nextStory();
-                Game.collectedBombs = 15;
+                Game.collectedBombs = -15;
             }
              
              map[pY][pX]=playerOn[0];

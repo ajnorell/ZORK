@@ -256,26 +256,34 @@ public class zorkArray
                 playerOn[1]=0;
             }
             else if (map[pY+v][pX+h]==8){
-                System.out.println("You encounter an alien leaking blue ooze. It attacks you without hesitation.");
-                if(enemyCount == 1)
-                    win = Battle.battle(player, enemy1);
-                else if(enemyCount == 2)
-                    win = Battle.battle(player, enemy2);
-                else if(enemyCount == 3){
-                     win = Battle.battle(player, enemy3);
-                    enemyCount = 1;
+                if(Game.story.get(0).equals("Find Emma")||Game.story.get(0).equals("Go to comms")||Game.story.get(0).equals("wait1")){
+                    pY+=v; v=0;
+                    pX+=h; h=0;
+                    playerOn[1]=8;
+                    System.out.println("You take a step");
                 }
                 else{
-                    System.out.println("An error has occured");
-                    win = false;
+                    System.out.println("You encounter an alien leaking blue ooze. It attacks you without hesitation.");
+                    if(enemyCount == 1)
+                        win = Battle.battle(player, enemy1);
+                    else if(enemyCount == 2)
+                        win = Battle.battle(player, enemy2);
+                    else if(enemyCount == 3){
+                         win = Battle.battle(player, enemy3);
+                        enemyCount = 1;
+                    }
+                    else{
+                        System.out.println("An error has occured");
+                        win = false;
+                    }
+                    if(win == false){
+                        Game.finished = true;
+                    }
+                    enemyCount++;
+                    pY+=v; v=0;
+                    pX+=h; h=0;
+                    playerOn[1]=0;
                 }
-                if(win == false){
-                    Game.finished = true;
-                }
-                enemyCount++;
-                pY+=v; v=0;
-                pX+=h; h=0;
-                playerOn[1]=0;
             }
             else if (map[pY+v][pX+h]==71)
             {

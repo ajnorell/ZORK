@@ -25,3 +25,6 @@ Combat commands:
 - Plasma grenades (requires plasma grenades)
 - Flamethrower (requires flamethrower)
 - Sonar gun (requires sonar gun)
+
+*note: when entering the threshold to a new room, the doorway does not count as a space. You walk directly through to the first space 
+across from you in the new room*

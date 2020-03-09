@@ -15,12 +15,13 @@ Commands:
 - stats to view your in-game statistics
 - help to show your commands
 - quit to leave the game and surrender to the aliens
-     Combat commands:
-          - Attack
-          - Guard
-          - Heal
-          - Slash (uses knife)
-          - Plasma gun (requires plasma gun)
-          - Plasma grenades (requires plasma grenades)
-          - Flamethrower (requires flamethrower)
-          - Sonar gun (requires sonar gun)
+
+Combat commands:
+- Attack
+- Guard
+- First Aid
+- Slash (uses knife)
+- Plasma gun (requires plasma gun)
+- Plasma grenades (requires plasma grenades)
+- Flamethrower (requires flamethrower)
+- Sonar gun (requires sonar gun)

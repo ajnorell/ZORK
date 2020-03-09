@@ -19,8 +19,8 @@ Commands:
 Combat commands:
 - Attack
 - Guard
-- First Aid
-- Slash (uses knife)
+- First Aid (uses granola bar)
+- Slash (requires knife)
 - Plasma gun (requires plasma gun)
 - Plasma grenades (requires plasma grenades)
 - Flamethrower (requires flamethrower)

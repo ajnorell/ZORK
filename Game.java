@@ -134,9 +134,9 @@ class Game
         System.out.println();
     }
     
-    private void win()
+    public static void win()
     {
-        System.out.println("The End");
+        System.out.println("You have won. The End");
     }
     
     private void lose()
@@ -361,6 +361,7 @@ class Game
         {
             int y = (int)(Math.random()*53+1);
             int x = (int)(Math.random()*46+1);
+            while (zorkArray.map[y][x] != 0)
             {
                 y = (int)(Math.random()*53+1);
                 x = (int)(Math.random()*46+1);
@@ -370,4 +371,26 @@ class Game
         zorkArray.map[53][14] = 8;
         zorkArray.map[30][33] = 8;
     }
+    
+    public static void printMap(){
+        for(int[] Y: zorkArray.map)
+                    {
+                       for(int X: Y)
+                       {
+                           if (X==2){
+                               System.out.print("P ");
+                            }
+                           else if (X==1 || X== 71){
+                                System.out.print("/ ");
+                            }
+                            else if (X==34){
+                                System.out.print("~ ");
+                            }
+                            else{
+                                System.out.print(". ");
+                            }
+                       }
+                      System.out.println();
+                    }
+                }
 }

@@ -131,7 +131,7 @@ import java.util.*;
              else if (map[pY+v][pX+h]==37){
                  v=0; h=0;
                  System.out.println("A kitchen stove blocks your path"); playerOn[1]=0;}
-             else if (map[pY+v][pX+h]==30){
+             else if (map[pY+v][pX+h]==38){
                  v=0; h=0;
                  System.out.println("A toilet blocks your path. As you look at it, you can't help but wonder where the waste goes."); playerOn[1]=0;}
                  //make a scanner gain input. If the player says "open" give them the cheat code: 5s26W$$nC*hpa,E
@@ -303,6 +303,7 @@ import java.util.*;
                     }
                     enemyCount++;
                     map[pY+v][pX+h]=0;
+                    map[pY][pX]=0;
                     pY+=v; v=0;
                     pX+=h; h=0;
                     playerOn[1]=0;
@@ -340,13 +341,13 @@ import java.util.*;
                 else{
                     //System.out.println("You take a step");
                     playerOn[1]=0;
-                if (Game.collectedFuses>=7){
-                Game.nextStory();
-                Game.collectedFuses = -10;
+            if (Game.collectedFuses>=7){
+                while(!(Game.story.get(0).equals("Fix Engine"))){
+                    Game.nextStory();
+                }
             }
             if (Game.collectedBombs>=10){
                 Game.nextStory();
-                Game.collectedBombs = -15;
             }
              
              map[pY][pX]=playerOn[0];

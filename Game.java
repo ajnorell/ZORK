@@ -130,6 +130,7 @@ class Game
         System.out.println("Welcome to Starship 15 A2! I'm your assistant, Alexa.");
         System.out.println("As you awaken from hypersleep, please be aware of your surroundings.\nTake a moment to look at the map and familiarize yourself with the ship.\n");
         System.out.println("When you're ready, use W,A,S,D to move about the ship.");
+        System.out.println("Enter any command to get started.");
         System.out.println("Type 'help' if you need help.");
         System.out.println();
     }
@@ -295,12 +296,13 @@ class Game
     private static void bombs() //called in zorkArray after 2 steps on 72 which should be at map[17][16]
     {
         storyPrinted = true;
+        collectedFuses = 0;
         System.out.println("'Amazing job, Paul! Now, I don't mean to put a damper on things, but there is one more task...' the Professor trails off.");
         System.out.println("You sigh in exasperation. 'What is it?'");
         System.out.println("'Well, the Apotheosis Virus must not spread. So we must--'");
         System.out.println("'Destroy the ship,' you finish.");
         System.out.println("'There should be some bomb components laying around. You may have found some already. \nWe need 10. How many do you currently have?'");
-        System.out.println("'I've got "+collectedFuses+",' you reply.");
+        System.out.println("'I've got "+collectedBombs+",' you reply.");
         System.out.println("'Right, then. Let's find the rest.'");
         System.out.println("[New Objective] Find the rest of the bomb components");
         story.remove(0);
@@ -311,6 +313,7 @@ class Game
         System.out.println("'We're almost done here, Paul,' Professor Hidgens says. \n'All we have to do is attach the bomb to the back of the engine.'");
         System.out.println("'Right. Here we go,' you mutter.");
         System.out.println("[New Objective] Attach the bomb to the back of the engine");
+        collectedBombs = 0;
         zorkArray.map[1][16] = 73;
         story.remove(0);
     }
@@ -373,6 +376,7 @@ class Game
     }
     
     public static void printMap(){
+        //System.out.print('\u000C');       clears terminal? not that helpful....
         for(int[] Y: zorkArray.map)
                     {
                        for(int X: Y)
@@ -380,11 +384,17 @@ class Game
                            if (X==2){
                                System.out.print("P ");
                             }
-                           else if (X==1 || X== 71){
+                           else if (X==1 || X== 11){
                                 System.out.print("/ ");
                             }
                             else if (X==34){
                                 System.out.print("~ ");
+                            }
+                            //else if (X==32 || X==33 || X==37 || X==39){
+                            //    System.out.print("# ");
+                            //}
+                            else if (X==35){
+                                System.out.print("% ");
                             }
                             else{
                                 System.out.print(". ");

@@ -124,8 +124,6 @@ public static boolean battle(character c, enemy e){
             System.out.println("An error has occured");
             return false;
         }
-        c.tempHp = c.getHp();
-        c.tempSp = c.getSp();  
         return true;     
     }    
 }

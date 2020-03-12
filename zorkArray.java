@@ -10,6 +10,7 @@ import java.util.*;
         private static enemy enemy3 = new enemy(1, "Vocal Alien", 30, 7, 10, attacks2);
         private static String[] bossAttacks = {"Galactic Punch", "Supersonic Scream", "Guard", "Punch"};
         private static enemy boss = new enemy(10, "Commander Davidson", 500, 13, 999, bossAttacks);
+        public static boolean storyTrue = false;
         private static character player = new character("Paul");
         //changed enemy count to enemyCount
         private static int enemyCount = 1;
@@ -65,7 +66,7 @@ import java.util.*;
                                 {1,0,0,1,41,0,55,53,1,33,33,0,33,33,33,33,33,33,0,0,33,0,1,36,0,0,0,0,0,31,32,32,32,31,0,0,0,0,0,0,1,53,0,0,0,0,1},
                                 {1,0,0,1,1,1,1,1,1,33,0,0,0,0,0,0,0,0,0,0,33,0,4,36,36,0,0,0,0,32,0,0,52,32,0,0,0,0,0,0,1,39,39,0,0,0,1},
                                 {1,0,0,1,0,0,0,0,0,0,0,33,33,33,33,33,33,33,33,33,33,0,1,36,36,0,0,31,32,0,0,0,0,33,32,31,0,0,0,0,1,0,0,0,0,0,1},
-                                {1,0,0,1,0,0,33,33,33,33,0,33,33,33,0,0,0,0,33,51,0,0,1,36,62,0,0,0,0,0,0,0,52,8,32,0,0,0,0,0,1,0,0,0,39,39,1},
+                                {1,0,0,1,0,0,33,33,33,33,0,33,33,33,0,0,0,0,33,51,0,0,1,36,0,0,0,0,0,0,0,0,52,8,32,0,0,0,0,0,1,0,0,0,39,39,1},
                                 {1,0,0,1,0,0,51,0,0,33,0,0,0,0,0,0,33,0,0,33,52,33,1,36,0,0,0,31,32,0,0,0,33,57,32,31,0,0,0,0,4,0,0,0,0,53,1},
                                 {1,0,0,1,0,0,0,0,0,51,33,33,52,33,33,0,0,0,0,33,33,33,1,0,0,0,0,0,0,32,52,0,33,32,0,0,0,0,0,0,4,0,0,0,0,0,1},
                                 {1,0,0,1,1,1,1,4,1,1,1,1,1,1,1,1,1,1,4,1,1,1,1,0,0,0,0,0,0,31,32,32,32,31,0,0,32,32,0,0,1,0,0,0,39,39,1},
@@ -92,6 +93,7 @@ import java.util.*;
          private static int pX = 21;
          private static int pY = 52;
          private static int[] playerOn = {0,0};
+         private static String storyline;
          /*public static void main(String[] args){
              //w
              move(-1,0);
@@ -142,21 +144,26 @@ import java.util.*;
              {
                  map[pY+v][pX+h]=0;
                  v=0; h=0;
-                 Game.nextStory();
+                 if (Game.currentStory.equals("wait1"))
+                    Game.currentStory = "Go to comms";
                  playerOn[1]=0;
              }
              else if (map[pY+v][pX+h]==62)
              {
-                 map[pY+v][pX+h]=0;
-                 v=0; h=0;
-                 Game.nextStory();
-                 playerOn[1]=0;
+                if (Game.currentStory.equals("wait3"))
+                {
+                    map[pY+v][pX+h]=0;
+                    v=0; h=0;
+                    Game.currentStory = "Find Melissa";
+                }
+                playerOn[1]=0;
              }
              else if (map[pY+v][pX+h]==63)
              {
                  map[pY+v][pX+h]=0;
                  v=0; h=0;
-                 Game.nextStory();
+                 if (Game.currentStory.equals("wait4"))
+                    Game.currentStory = "Fuses";
                  playerOn[1]=0;
              }
              else if (map[pY+v][pX+h]==64)
@@ -185,7 +192,7 @@ import java.util.*;
                     h*=2; pX+=h; h=0;
                     map[pY][pX]=2;
                     playerOn[1] = 0;
-                    Game.printMap();
+                    Game.printMap(storyTrue);
                     System.out.println("You enter the threshold to a new room");
                 }
                 else if (map[pY+v][pX+h]==41){
@@ -200,7 +207,7 @@ import java.util.*;
                     }
                     v=0; h=0;
                     playerOn[1]=0;
-                    Game.printMap();
+                    Game.printMap(storyTrue);
                     System.out.println("You are standing on a vent. \nYou crawl through to the other side, braving your way through cobwebs, bugs, and weird blue ooze.");
                 }
                 else if (map[pY+v][pX+h]==42){
@@ -311,52 +318,127 @@ import java.util.*;
                 else if (map[pY+v][pX+h]==71)
                 {
                     map[pY+v][pX+h]=0;
-                    Game.nextStory();
+                    if (Game.currentStory.equals("wait2"))
+                        Game.currentStory = "Find Davidson";
                     playerOn[1]=0;
                 }
                 else if (map[pY+v][pX+h]==72)
                 {
                     map[pY+v][pX+h]=0;
-                    Game.nextStory();
+                    if (Game.currentStory.equals("wait6"))
+                        Game.currentStory = "Bombs";
                     playerOn[1]=0;
                 }
                 else if (map[pY+v][pX+h]==73)
                 {
                     map[pY+v][pX+h]=0;
-                    Game.nextStory();
+                    if (Game.currentStory.equals("wait8"))
+                        Game.currentStory = "escape";
                     playerOn[1]=0;
                 }
                 else if (map[pY+v][pX+h]==74)
                 {
                     map[pY+v][pX+h]=0;
-                    Game.nextStory();
-                    playerOn[1]=0;
-                }
-                else if (map[pY+v][pX+h]==75)
-                {
-                    map[pY+v][pX+h]=0;
-                    Game.nextStory();
+                    if (Game.currentStory.equals("wait9"))
+                        Game.currentStory = "Choose";
                     playerOn[1]=0;
                 }
                 else{
                     //System.out.println("You take a step");
                     playerOn[1]=0;
-            if (Game.collectedFuses>=7){
-                while(!(Game.story.get(0).equals("Fix Engine"))){
-                    Game.nextStory();
                 }
-            }
-            if (Game.collectedBombs>=10){
-                Game.nextStory();
-            }
+                if (Game.collectedFuses>=7){
+                    if (Game.currentStory.equals("wait5"))
+                        Game.currentStory = "Fix Engine";
+                    Game.collectedFuses = 0;
+                }
+                if (Game.collectedBombs>=10){
+                    if (Game.currentStory.equals("wait7"))
+                        Game.currentStory = "Build Bomb";
+                    Game.collectedBombs = 0;
+                }
              
              map[pY][pX]=playerOn[0];
              playerOn[0]=playerOn[1];
              pY+=v;
              pX+=h;
              map[pY][pX]=2;
-             Game.printMap();
+             Game.printMap(storyTrue);
          }
      }
-}
+     public static String getStoryline(){
+         storyline = "@zorkArray.java::Alexa.command//turnOnTheLights/id=@6BzcQK9DZ%v7c^@%pfN/";
+         return storyline;
+     }
+     
+     public static void kick(String direction){
+         if (direction.equals("w")){
+            if (map[pY-1][pX]==31 && map[pY-2][pX]==0)
+            {
+                map[pY-1][pX]=0; map[pY-2][pX]=31;
+                Game.printMap(storyTrue);
+            }
+            else if (map[pY-1][pX]==33 && map[pY-2][pX]==0)
+            {
+                map[pY-1][pX]=0; map[pY-2][pX]=33;
+                Game.printMap(storyTrue);
+            }
+            else if (map[pY-2][pX]!=0)
+                System.out.println("You kick outward, but nothing happens. \nThere must be something on the other side.");
+            else
+                System.out.println("You can not kick this");
+        }
+        else if (direction.equals("a")){
+            if (map[pY][pX-1]==31 && map[pY][pX-2]==0)
+            {
+                map[pY][pX-1]=0; map[pY][pX-2]=31;
+                Game.printMap(storyTrue);
+            }
+            else if (map[pY-1][pX]==33 && map[pY][pX-2]==0)
+            {
+                map[pY][pX-1]=0; map[pY][pX-2]=33;
+                Game.printMap(storyTrue);
+            }
+            else if (map[pY][pX-2]!=0)
+                System.out.println("You kick outward, but nothing happens. \nThere must be something on the other side.");
+            else
+                System.out.println("You can not kick this");
+        }
+        else if (direction.equals("d")){
+            if (map[pY][pX+1]==31 && map[pY][pX+2]==0)
+            {
+                map[pY][pX+1]=0; map[pY][pX+2]=31;
+                Game.printMap(storyTrue);
+            }
+            else if (map[pY][pX+1]==33 && map[pY][pX+2]==0)
+            {
+                map[pY][pX+1]=0; map[pY][pX+2]=33;
+                Game.printMap(storyTrue);
+            }
+            else if (map[pY][pX+2]!=0)
+                System.out.println("You kick outward, but nothing happens. \nThere must be something on the other side.");
+            else
+                System.out.println("You can not kick this");
+        }
+        else if (direction.equals("s")){
+            if (map[pY+1][pX]==31 && map[pY+2][pX]==0)
+            {
+                map[pY+1][pX]=0; map[pY+2][pX]=31;
+                Game.printMap(storyTrue);
+            }
+            else if (map[pY+1][pX]==33 && map[pY+2][pX]==0)
+            {
+                map[pY+1][pX]=0; map[pY+2][pX]=33;
+                Game.printMap(storyTrue);
+            }
+            else if (map[pY+2][pX]!=0)
+                System.out.println("You kick outward, but nothing happens. \nThere must be something on the other side.");
+            else
+                System.out.println("You can not kick this");
+        }
+        else{
+            System.out.println("In an attempt to kick... something... you flail around wildly \nbefore falling back on your butt.");
+            System.out.println("Maybe try kicking in an actual direction next time");
+        }
+     }
 }

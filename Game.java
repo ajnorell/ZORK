@@ -27,8 +27,9 @@ class Game
     private Parser parser;
     public static int collectedFuses = 0;
     public static int collectedBombs = 0;
-    public static ArrayList<String> inv = new ArrayList<String>(); //says '-> expected' in BlueJay??????????
-    public static ArrayList<String> story = new ArrayList<String>(); //ditto!!!!!!
+    public static ArrayList<String> inv = new ArrayList<String>();
+    public static String[] story = new String[]{"Find Emma","Go to comms","Find Davidson","Find Melissa","Fuses","Fix Engine","Bombs","Build Bomb","Escape","Choose"};
+    public static String currentStory = "Find Emma";
     public static boolean storyPrinted = false;
     private static Battle battle = new Battle();
     public static boolean finished = false;
@@ -44,27 +45,8 @@ class Game
      *  Main play routine.  Loops until end of play.
      */
     public void play() 
-    {   
+    {
         inv.add("Knife");
-        story.add("Find Emma");
-        story.add("wait1");
-        story.add("Go to comms");
-        story.add("wait");
-        story.add("Find Davidson");
-        story.add("wait");
-        story.add("Find Melissa");
-        story.add("wait");
-        story.add("Fuses");
-        story.add("wait");
-        story.add("Fix engine");
-        story.add("wait");
-        story.add("Bombs");
-        story.add("wait");
-        story.add("Build bomb");
-        story.add("wait");
-        story.add("Escape");
-        story.add("wait");
-        story.add("Choose");
         printWelcome();
 
         // Enter the main command loop.  Here we repeatedly read commands and
@@ -74,43 +56,43 @@ class Game
         {
             Command command = parser.getCommand();
             finished = processCommand(command);
-            if (story.get(0).equals("Find Emma") && (storyPrinted == false))
+            if (currentStory.equals("Find Emma"))
             {
                 findEmma();
             }
-            else if (story.get(0).equals("Go to comms") && (storyPrinted == false))
+            else if (currentStory.equals("Go to comms"))
             {
                 goToComms();
             }
-            else if (story.get(0).equals("Find Davidson") && (storyPrinted == false))
+            else if (currentStory.equals("Find Davidson"))
             {
                 findDavidson();
             }
-            else if (story.get(0).equals("Find Melissa") && (storyPrinted == false))
+            else if (currentStory.equals("Find Melissa"))
             {
                 findMelissa();
             }
-            else if (story.get(0).equals("Fuses") && (storyPrinted == false))
+            else if (currentStory.equals("Fuses"))
             {
                 fuses();
             }
-            else if (story.get(0).equals("Fix Engine") && (storyPrinted == false))
+            else if (currentStory.equals("Fix Engine"))
             {
                 fixEngine();
             }
-            else if (story.get(0).equals("Bombs") && (storyPrinted == false))
+            else if (currentStory.equals("Bombs"))
             {
                 bombs();
             }
-            else if (story.get(0).equals("Build bomb") && (storyPrinted == false))
+            else if (currentStory.equals("Build Bomb"))
             {
                 buildBomb();
             }
-            else if (story.get(0).equals("Escape") && (storyPrinted == false))
+            else if (currentStory.equals("Escape"))
             {
                 escape();
             }
-            else if (story.get(0).equals("Choose") && (storyPrinted == false))
+            else if (currentStory.equals("Choose"))
             {
                 choose();
             }
@@ -159,6 +141,7 @@ class Game
         }
 
         String commandWord = command.getCommandWord();
+        String secondWord = command.getSecondWord();
         if (commandWord.equals("//help"))
             printHelp();
         else if(commandWord.equals("w")){
@@ -177,7 +160,16 @@ class Game
             if((zorkArray.map[48][37] == 2) || (zorkArray.map[48][39] == 2))
                 System.out.println("5s26W$$nC*hpa,E");
             else
-                System.out.println("That is not a command I recognize.");
+                System.out.println("<Unable to accept command>");
+        }
+        else if (commandWord.equals("kick")){
+            if (command.hasSecondWord()){
+                String direction = command.getSecondWord();
+                zorkArray.kick(direction);
+            }
+            else{
+                System.out.println("<Unable to accept command>");
+            }
         }
         else if(commandWord.equals("stats")){
             System.out.println("Health: "+character.hp);
@@ -191,6 +183,7 @@ class Game
             System.out.println(inventory);
             System.out.println("Collected Fuses: "+collectedFuses);
             System.out.println("Collected Bomb Components: "+collectedBombs);
+            System.out.println("[Current Objective] "+currentStory);
         }
         else if (commandWord.equals("quit"))
         {
@@ -203,16 +196,16 @@ class Game
         {
             printHelp();
         }
-        else if (commandWord.equals("id"))
+        else if (commandWord.equals("Alexa"))
         {
-            for(int i=0;i<53;i++)
+            Scanner cheat = new Scanner(System.in);
+            System.out.print("Yes, Paul? \n > ");
+            String alexaCode = cheat.nextLine();
+            if (alexaCode.equals(zorkArray.getStoryline()))
             {
-                for(int j=0;i<46;i++)
-                {
-                    System.out.print(zorkArray.map[i][j]);
-                }
-                System.out.print("\n");
+                zorkArray.storyTrue = true;
             }
+            cheat.close();
         }
         return false;
     }
@@ -237,7 +230,7 @@ class Game
         System.out.println("'A space station known as Starship 15 A2 has been launched under the Galactic League of Extraterrestrial Exploration and \nhas been tasked with researching the Apotheosis Virus. \nThis is Dan with the Hatchetfield morning news. Back to you, Donna.'");
         System.out.println("You turn away from the TV, ready to start your dream job. \nAnd finding the captain of the ship is a good place to start");
         System.out.println("[New Objective] Head to the Cafeteria to find Emma.");
-        story.remove(0);
+        currentStory = "wait1";
     }
     private static void goToComms() //called in zorkArray when 2 steps on 71 which is at map[37][38]
     {
@@ -248,8 +241,8 @@ class Game
         System.out.println("'Here, take a granola bar. They're a new formula to boost your immune system. Good luck, Paul! See you around.'");
         inv.add("Granola Bar");
         System.out.println("[New Objective] Go to the Communications Room");
-        zorkArray.map[37][38] = 71;
-        story.remove(0);
+        zorkArray.map[35][31] = 71;
+        currentStory = "wait2";
     }
     private static void findDavidson() //called in zorkArray when 2 steps on 9;
     {
@@ -260,7 +253,8 @@ class Game
         System.out.println("Okay, don't panic. First things first. Find the Commander.");
         System.out.println("[New Objective] Find Commmander Davidson");
         setAliens();
-        story.remove(0);
+        zorkArray.map[30][24] = 62;
+        currentStory = "wait3";
     }
     private static void findMelissa() //called in zorkArray when 2 steps on 62
     {
@@ -272,7 +266,7 @@ class Game
         System.out.println("I'll go back to the cafeteria to talk to Emma");
         System.out.println("Although... the engineer might be more helpful in this situation. I guess I'll check the engine room");
         System.out.println("[New Objective] Find Melissa");
-        story.remove(0);
+        currentStory = "wait4";
     }
     private static void fuses() //called in zorkArray when 2 steps on 63
     {
@@ -281,7 +275,7 @@ class Game
         System.out.println("'Thank God I found you, Paul,' she says. \n'We need to restore the power as soon as possible or we'll asphyxiate. \nThe Engine Room is blocked by this rubble. \nIf you could find a way in and collect just 7 fuses for me, we could easily fix this.'");
         System.out.println("Melissa smiles awkwardly. 'Don't panic, but be cautious. Think of it as a game,' she jokes. \n'It could be fun!'");
         System.out.println("[New Objective] Find 7 fuses");
-        story.remove(0);
+        currentStory = "wait5";
     }
     private static void fixEngine() //called here after player finds all fuses
     {
@@ -291,7 +285,7 @@ class Game
         System.out.println("'Hmm. Perhaps the ventilation system will do. \nMs. Melissa told me the easiest access to the vents is in the kitchen. Perhaps try there.'");
         System.out.println("[New Objective] Access the vents and install the fuses");
         zorkArray.map[17][16] = 72;
-        story.remove(0);
+        currentStory = "wait6";
     }
     private static void bombs() //called in zorkArray after 2 steps on 72 which should be at map[17][16]
     {
@@ -305,7 +299,7 @@ class Game
         System.out.println("'I've got "+collectedBombs+",' you reply.");
         System.out.println("'Right, then. Let's find the rest.'");
         System.out.println("[New Objective] Find the rest of the bomb components");
-        story.remove(0);
+        currentStory = "wait7";
     }
     private static void buildBomb() //called here after player collects all bomb components
     {
@@ -315,7 +309,7 @@ class Game
         System.out.println("[New Objective] Attach the bomb to the back of the engine");
         collectedBombs = 0;
         zorkArray.map[1][16] = 73;
-        story.remove(0);
+        currentStory = "wait8";
     }
     private static void escape() //called in zorkArray after 2 steps on 73 which should be at map[1][16]
     {
@@ -328,7 +322,7 @@ class Game
         System.out.println("'It's okay. I'll arm it. Just go! We need at least one survivor.' \nMelissa turns you around and pushes you towards the exit. \nAs you leave, you catch a glimpse of blue ooze on Melissa's shoulder.");
         System.out.println("[New Objective] Get to the escape pod");
         zorkArray.map[52][11] = 74;
-        story.remove(0);
+        currentStory = "wait9";
     }
     private static void choose() //called in zorkArray after 2 steps on 74 which should be at map[52][11]
     {
@@ -352,11 +346,13 @@ class Game
         System.out.println("'"+choice+"?' you ask. She turns to you slowly. \nThe voice that emanates from her mouth is not her own. \nWe will not be resisted, Paul.");
     }
     
+    /*
     public static void nextStory()
     {
         story.remove(0);
         storyPrinted = false;
     }
+    */
     
     public static void setAliens()
     {
@@ -375,7 +371,7 @@ class Game
         zorkArray.map[30][33] = 8;
     }
     
-    public static void printMap(){
+    public static void printMap(boolean obstacles){
         //System.out.print('\u000C');       clears terminal? not that helpful....
         for(int[] Y: zorkArray.map)
                     {
@@ -395,6 +391,18 @@ class Game
                             //}
                             else if (X==35){
                                 System.out.print("% ");
+                            }
+                            else if ((X==32 || X==33 || X==36) && obstacles==true){
+                                System.out.print("# ");
+                            }
+                            else if ((X==51 || X==52) && obstacles==true){
+                                System.out.print("$ ");
+                            }
+                            else if ((X==61 || X==62 || X==63 || X==71 || X==72 || X==73 || X==74) && obstacles==true){
+                                System.out.print("@ ");
+                            }
+                            else if ((X==8) && obstacles==true){
+                                System.out.print("X ");
                             }
                             else{
                                 System.out.print(". ");
